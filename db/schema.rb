@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170409151508) do
     t.string   "gender"
     t.string   "cep"
     t.string   "state"
-    t.text     "address"
+    t.text     "adress"
     t.string   "adress_number"
     t.string   "complement"
     t.string   "city"
