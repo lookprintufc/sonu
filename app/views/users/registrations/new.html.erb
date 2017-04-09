@@ -1,29 +1,277 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+<div class="field">
+    <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <em>(<%= @minimum_password_length %>
+        characters minimum)</em>
+    <% end %><br/>
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+<div class="field">
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+</div>
 
-  <div class="actions">
+<div class="actions">
     <%= f.submit "Sign up" %>
-  </div>
+</div>
 <% end %>
 
 <%= render "users/shared/links" %>
+
+<div id="content">
+
+    <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <div id="page-header">
+
+        <div class="row">
+            <div class="span12">
+
+                <h2>
+                    Cadastro
+                </h2>
+
+            </div>
+            <!-- end .span12 -->
+        </div>
+        <!-- end .row -->
+
+    </div>
+    <!-- end #page-header -->
+
+    <div class="row">
+        <div class="span12">
+
+            <div>
+
+                <div style="text-align:center; margin-bottom:30px">
+                    * Campos Obrigatórios
+                </div>
+
+                <form action='index.php?referencia=cadastro' method='post' id='formu'>
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= devise_error_messages! %>
+                    <input type=hidden name=cadastrar value=1>
+                    <input type=hidden name=uid value="">
+                    <div class="quadrado">
+
+                        <div class="descricao">
+
+                            <div class="cad-tit">
+                                Nome Completo
+                            </div>
+                            <div class="cad-desc">
+                                <!-- <input type=text class="" name=nome id=nome style="width:400px" value=""> * -->
+                                <%= f.text_field :name, autofocus: true,style: "width:350px" do %>Nome<%end%>
+                                *</div>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="cad-tit">
+                            Email
+                        </div>
+                        <div class="cad-desc">
+                            <%= f.email_field :email, autofocus: true,style: "width:350px" %></div>
+                        <!-- <input type=text class="" name=email id=email style="width:350px" value=""> -->
+                        *</div>
+                    <div class="clear"></div>
+
+                    <div class="cad-tit">
+                        Confirmar Email</div>
+                    <%= f.email_field :email, autofocus: true,style: "width:350px" %>*</div>
+                <!-- <div class="cad-desc"> <input type=text class="" name=confemail style="width:350px" value=""> * </div> -->
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Senha
+                </div>
+                <div class="cad-desc">
+                    <!-- <input type=password class="" name=senha id=senha style="width:150px"> -->
+                    <%= f.password_field :password, autofocus: true,style: "width:350px" %>* *
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Confirmar Senha
+                </div>
+                <div class="cad-desc">
+                    <!-- <input type=password class="" name=confsenha style="width:150px"> -->
+                    <%= f.password_field :password, autofocus: true,style: "width:350px" %>*
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    RG
+                </div>
+                <div class="cad-desc">
+                    <!-- <input type=text class="" name=rg> -->
+                    <%= f.text_field :general_register, autofocus: true %>
+                    *
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    CPF
+                </div>
+                <div class="cad-desc">
+                  <%= f.text_field :cpf, autofocus: true,style: "width:350px" %>
+                    <!-- <input type=text class="" name=cpf id=cpf> -->
+                    *
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Data de Nascimento
+                </div>
+                <div class="cad-desc">
+                    <!-- <input type=text class="" name=nascimento id=nascimento style="width:120px" value=""> -->
+                    <%= f.text_field :birthday, :id => 'birthday_picker', class: 'form-control'%>
+                    <!-- <%= f.date_field :birthday, autofocus: true,style: "width:120p" %> -->
+                    *
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Sexo
+                </div>
+                <div class="cad-desc">
+                    <label for="gender_male">
+                        <input type="radio" id="gender_male" value="M" name="sexo"/>
+                        Masculino
+                    </label>
+                    <label for="gender_female">
+                        <input type="radio" id="gender_female" value="F" name="sexo"/>
+                        Feminino
+                    </label>
+                    *
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    CEP
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=cep id=cep>
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Endereço
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=endereco style="width:300px">
+                </div>
+                <div class="cad-tit" style="width:40px">
+                    Nº
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=numero style="width:60px">
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Complemento
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=complemento>
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Bairro
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=bairro>
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Cidade
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=cidade value="">
+                </div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Telefone
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=telefone id=telefone style="width:120px"></div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Celular
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=celular id=celular style="width:120px">
+                    *</div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Instituição de Ensino
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=instituicao id=instituicao style="width:400px">
+                    *</div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Matícula
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=matricula id=matricula style="width:200px">
+                    (Opcional, caso não possua)</div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">
+                    Semestre
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=semestre id=semestre style="width:200px">
+                    (Opcional, caso não possua matrícula)</div>
+                <div class="clear"></div>
+
+                <div class="cad-tit">Link Perfil Facebook
+                </div>
+                <div class="cad-desc">
+                    <input type=text class="" name=link_facebook id=link_facebook style="width:200px">
+                    *</div>
+                <div class="clear"></div>
+
+                <div style="width: 500px; text-align: left; margin: 15px 10px 26px 75px;">
+                    <input type="checkbox" id="agree" name="agree">
+                    Eu li e concordo com os
+                    <a class='iframe' href="termos_uso.php">Termos de Uso</a>
+                    do site.
+                </div>
+
+                <div style="text-align:center">
+                    <input type=submit value=Cadastrar>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </form>
+
+</div>
+
+</div>
+<!-- end .span12 -->
+</div>
+<!-- end. row -->
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+</div>
