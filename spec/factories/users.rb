@@ -21,7 +21,7 @@ FactoryGirl.define do
         f.phone '(085)99635-7562'
         f.cel '(085)99635-7562'
         f.university 'Universidade Federal do Ceará'
-        f.university_id 385_204
+        f.registration_id 385204
         f.semester 3
         f.facebook_profile_link 'www.fb.com'
     end
