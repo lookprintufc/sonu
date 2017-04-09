@@ -669,7 +669,7 @@
 				transition: background-color 0.3s;
 	}
 
-	.icon-box-3:hover > i { color: ##7F8C8D; }
+	.icon-box-3:hover > i { color: #7F8C8D; }
 
 	.icon-box-3 > img {
 		float: left;

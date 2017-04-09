@@ -77,4 +77,5 @@ RSpec.describe User, type: :model do
         expect(FactoryGirl.create(:user)).to be_valid
         expect(FactoryGirl.build(:user,email: "lucas65_65@hotmail.com", cpf: '12112458754',general_register: '12457821212')).to be_valid
     end
+
 end

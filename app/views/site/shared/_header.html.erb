@@ -1,119 +1,159 @@
 <!-- end #header-top -->
 <div id="header">
 
-  <!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-  <div class="row">
-    <a href="/">
-      <img style="position: absolute; top: -10px; width: 190px; z-index:9999" class="responsive-img" alt="" src="images/logo.png">
-    </a>
-  </div>
-  <div class="row">
-    <div class="span3">
-
-      <!-- // Logo // -->
-      <a href="index.html" id="logo"></a>
-
+    <div class="row">
+        <a href="/">
+            <img style="position: absolute; top: -10px; width: 190px; z-index:9999" class="responsive-img" alt="" src="images/logo.png">
+        </a>
     </div>
-    <!-- end .span3 -->
-    <div class="span9">
+    <div class="row">
+        <div class="span3">
 
-      <!-- // Mobile menu trigger // -->
-      <a href="#" id="mobile-menu-trigger">
-        <i class="fa fa-bars"></i>
-      </a>
+            <!-- // Logo // -->
+            <a href="index.html" id="logo"></a>
 
-      <!-- // Menu // -->
-      <ul class="sf-menu" id="menu">
+        </div>
+        <!-- end .span3 -->
+        <div class="span9">
 
-        <li >
-          <a href="">Sobre a SONU</a>
-          <ul>
-            <li>
-              <a href="/carta-de-apresentacao">Carta de Apresentação</a>
-            </li>
-            <li>
-              <a href="/o-que-sao-muns">O que são MUN's? (Model United Nations)</a>
-            </li>
-            <li>
-              <a href="/historia-sonu">História da SONU</a>
-            </li>
-            <li>
-              <a href="/secretariado">O Secretariado</a>
-            </li>
-            <li>
-              <a href="/diretoria">A Diretoria</a>
-            </li>
-            <li>
-              <a href="/faq">FAQ</a>
-            </li>
+            <!-- // Mobile menu trigger // -->
+            <a href="#" id="mobile-menu-trigger">
+                <i class="fa fa-bars"></i>
+            </a>
 
-          </ul>
-        </li>
-        <li >
-          <a href="">SONU 2017</a>
-          <ul>
-            <li>
-              <a href="/comites">Comitês</a>
-            </li>
-            <li>
-              <a href="/cronograma">Cronograma</a>
-            </li>
-            <li>
-              <a href="/festas">Festas</a>
-            </li>
-            <li>
-              <a href="/fortaleza">Fortaleza</a>
-            </li>
-            <li>
-              <a href="/certificados-sonu">Certificados SONU
-              </a>
-            </li>
-          </ul>
-        </li>
+            <!-- // Menu // -->
+            <ul class="sf-menu" id="menu">
 
-        <li >
-          <a href="#">Outros Projetos</a>
-          <ul>
-            <li>
-              <a href="/sonu-academico">SONU Acadêmico</a>
-            </li>
-            <li>
-              <a href="/sonu-beta">SONU Beta</a>
-            </li>
-            <li>
-              <a href="/sonu-escolas">SONU Escolas</a>
-            </li>
-            <li>
-              <a href="/minicursos-palestras-sonu-solidario">Minicursos/Palestras</a>
-            </li>
-            <li>
-              <a href="/sonu-solidario">SONU Solidário</a>
-            </li>
-            <li>
-              <a href="/certificados">Certificados</a>
-            </li>
-          </ul>
-        </li>
+                <li >
+                    <a href="">Sobre a SONU</a>
+                    <ul>
+                        <li>
+                            <%= link_to show_card_path do%>
+                            Carta de Apresentação
+                            <%end%>
+                            <!-- <a href="/carta-de-apresentacao">Carta de Apresentação</a> -->
+                        </li>
+                        <li>
+                            <%= link_to muns_path do%>
+                            O que são MUN's? (Model United Nations)
+                            <%end%>
+                        </li>
+                        <li>
+                          <%= link_to story_path do%>
+                            História da Sonu
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to secretary_path do%>
+                            O Secretariado
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to diretory_path do%>
+                            A Diretoria
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to faq_path do%>
+                           FAQ
+                          <%end%>
+                        </li>
 
-        <li >
-          <a href="/parceiros">Parceiros</a>
-        </li>
-        <li >
-          <a href="/inscricoes">Inscrições</a>
-        </li>
-        <li >
-          <a href="/contato">Contato</a>
-        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="">SONU 2017</a>
+                    <ul>
+                        <li>
+                          <%= link_to comitees_path do%>
+                            Comitês
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to cronogram_path do%>
+                            Cronograma
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to parties_path do%>
+                            Festas
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to fortaleza_path do%>
+                            Fortaleza
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to sonu_certificates_path do%>
+                          Certificados SPNU
+                          <%end%>
+                        </li>
+                    </ul>
+                </li>
 
-      </ul>
+                <li >
+                    <a href="#">Outros Projetos</a>
+                    <ul>
+                        <li>
+                          <%= link_to academic_path do%>
+                            SONU Acadêmico
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to beta_path do%>
+                            SONU Beta
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to schools_path do%>
+                            SONU Escolas
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to speeches_path do%>
+                            Minicursos/Palestras
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to solidary_path do%>
+                            SONU Solidário
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to certificates_path do%>
+                            Certificados
+                          <%end%>
+                        </li>
+                    </ul>
+                </li>
 
+                <li >
+                  <%= link_to partners_path do%>
+                    Parceiros
+                  <%end%>
+                </li>
+                <li >
+                  <%= link_to inscription_path do%>
+                    Inscrições
+                  <%end%>
+                </li>
+                <li >
+                  <%= link_to contact_path do%>
+                    Contato
+                  <%end%>
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- end .span9 -->
     </div>
-    <!-- end .span9 -->
-  </div>
-  <!-- end .row -->
+    <!-- end .row -->
 
-  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 </div>
 <!-- end #header -->
