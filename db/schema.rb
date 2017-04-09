@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170409151508) do
     t.string   "city"
     t.string   "district"
     t.string   "phone"
+    t.string   "cel"
     t.string   "university"
     t.integer  "university_id"
     t.integer  "semester"

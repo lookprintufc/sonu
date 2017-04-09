@@ -19,6 +19,7 @@ FactoryGirl.define do
         f.city 'Cascavel'
         f.district 'Parque Urupê'
         f.phone '(085)99635-7562'
+        f.cel '(085)99635-7562'
         f.university 'Universidade Federal do Ceará'
         f.university_id 385_204
         f.semester 3

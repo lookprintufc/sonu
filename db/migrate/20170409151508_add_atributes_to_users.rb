@@ -13,6 +13,7 @@ class AddAtributesToUsers < ActiveRecord::Migration[5.0]
         add_column :users, :city, :string
         add_column :users, :district, :string
         add_column :users, :phone, :string
+        add_column :users, :cel, :string
         add_column :users, :university, :string
         add_column :users, :university_id, :integer
         add_column :users, :semester, :integer
