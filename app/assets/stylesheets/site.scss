@@ -2,29 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require sonu_template/_layout/css/base.css
- *= require sonu_template/_layout/css/grid.css
- Aqui está o erro:
- *= require sonu_template/_layout/css/elements.css
- *= require sonu_template/_layout/css/layout.css
- *= require sonu_template/_layout/css/wide.css
- *= require sonu_template/_layout/js/revolutionslider/css/settings.css
- *= require sonu_template/_layout/js/revolutionslider/css/custom.css
- *= require sonu_template/_layout/js/bxslider/jquery.bxslider.css
- *= require sonu_template/_layout/js/magnificpopup/magnific-popup.css
- *= require sonu_template/_layout/css/iconfontcustom/iconfontcustom.css
- *= require sonu_template/_layout/css/fontawesome/font-awesome.min.css
- *= require sonu_template/_layout/css/animate/animate.min.css
+
+
+
+*= require sonu_template/_layout/css/base.css
+*= require sonu_template/_layout/css/grid.css
+Aqui está o erro:
+*= require sonu_template/_layout/css/elements.css
+*= require sonu_template/_layout/css/layout.css
+*= require sonu_template/_layout/css/wide.css
+*= require sonu_template/_layout/js/revolutionslider/css/settings.css
+*= require sonu_template/_layout/js/revolutionslider/css/custom.css
+*= require sonu_template/_layout/js/bxslider/jquery.bxslider.css
+*= require sonu_template/_layout/js/magnificpopup/magnific-popup.css
+*= require sonu_template/_layout/css/iconfontcustom/iconfontcustom.css
+*= require sonu_template/_layout/css/fontawesome/font-awesome.min.css
+*= require sonu_template/_layout/css/animate/animate.min.css
+
 
  */

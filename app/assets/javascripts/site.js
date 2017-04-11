@@ -1,20 +1,7 @@
-//= require sonu_template/_layout/js/modernizr-2.6.2.min.js
-//= require sonu_template/_layout/js/jquery-2.1.0.min.js
-//= require sonu_template/_layout/js/viewport/jquery.viewport.js
-//= require sonu_template/_layout/js/easing/jquery.easing.1.3.js
-//= require sonu_template/_layout/js/simpleplaceholder/jquery.simpleplaceholder.js
-//= require sonu_template/_layout/js/fitvids/jquery.fitvids.js
-//= require sonu_template/_layout/js/superfish/hoverIntent.js
-//= require sonu_template/_layout/js/superfish/superfish.js
-//= require sonu_template/_layout/js/revolutionslider/pluginsources/jquery.themepunch.plugins.min.js
-//= require sonu_template/_layout/js/revolutionslider/js/jquery.themepunch.revolution.min.js
-//= require sonu_template/_layout/js/bxslider/jquery.bxslider.min.js
-//= require sonu_template/_layout/js/magnificpopup/jquery.magnific-popup.min.js
-//= require sonu_template/_layout/js/parallax/jquery.parallax.min.js
-//= require sonu_template/_layout/js/easypiechart/jquery.easypiechart.min.js
-//= require sonu_template/_layout/js/easytabs/jquery.easytabs.min.js
-//= require sonu_template/_layout/js/jqueryvalidate/jquery.validate.min.js
-//= require sonu_template/_layout/js/jqueryform/jquery.form.min.js
-//= require sonu_template/_layout/js/gmap/jquery.gmap.min.js
-//= require sonu_template/_layout/js/plugins.js
-//= require sonu_template/_layout/js/scripts.js
+//= require jquery
+//= require maskedinput
+jQuery(function($){
+   $("#cpf").mask("999.999.999-99");
+   $("#cep").mask("99999-999");
+   $(".phone").mask("(99) 99999-9999)");
+});
