@@ -29,35 +29,37 @@
                 </div>
 
                 <!-- <form action='index.php?referencia=cadastro' method='post' id='formu'> -->
-                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                    <%= devise_error_messages! %>
-                    <input type=hidden name=cadastrar value=1>
-                    <input type=hidden name=uid value="">
-                    <div class="quadrado">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+                <input type=hidden name=cadastrar value=1>
+                <input type=hidden name=uid value="">
+                <div class="quadrado">
 
-                        <div class="descricao">
-
-                            <div class="cad-tit">
-                                Nome Completo
-                            </div>
-                            <div class="cad-desc">
-                                <!-- <input type=text class="" name=nome id=nome style="width:400px" value=""> * -->
-                                <%= f.text_field :name, autofocus: true,style: "width:350px"%> *</div>
-                        </div>
-                        <div class="clear"></div>
+                    <div class="descricao">
 
                         <div class="cad-tit">
-                            Email
+                            Nome Completo
                         </div>
                         <div class="cad-desc">
-                            <%= f.email_field :email, autofocus: true,style: "width:350px" %>
+                            <!-- <input type=text class="" name=nome id=nome style="width:400px" value=""> * -->
+                            <%= f.text_field :name, autofocus: true,style: "width:350px"%>*
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="cad-tit">
+                        Email
+                    </div>
+                    <div class="cad-desc">
+                        <%= f.email_field :email, autofocus: true,style: "width:350px" %>
                         <!-- <input type=text class="" name=email id=email style="width:350px" value=""> -->
-                      *</div>
+                        *</div>
                     <div class="clear"></div>
 
                     <div class="cad-tit">
                         Confirmar Email</div>
-                    <%= f.email_field :email, autofocus: true,style: "width:350px" %> *</div>
+                    <%= f.email_field :email, autofocus: true,style: "width:350px" %>
+                    *</div>
                 <!-- <div class="cad-desc"> <input type=text class="" name=confemail style="width:350px" value=""> * </div> -->
                 <div class="clear"></div>
 
@@ -70,7 +72,8 @@
                     <em>(<%= @minimum_password_length %>
                         characters minimum)</em>
                     <% end %><br/>
-                    <%= f.password_field :password,style: "width:350px",autocomplete: "off" %> *
+                    <%= f.password_field :password,style: "width:350px",autocomplete: "off" %>
+                    *
                 </div>
                 <div class="clear"></div>
 
@@ -79,7 +82,8 @@
                 </div>
                 <div class="cad-desc">
                     <!-- <input type=password class="" name=confsenha style="width:150px"> -->
-                    <%= f.password_field :password_confirmation,style: "width:350px",autocomplete: "off" %> *
+                    <%= f.password_field :password_confirmation,style: "width:350px",autocomplete: "off" %>
+                    *
                 </div>
                 <div class="clear"></div>
 
@@ -88,7 +92,8 @@
                 </div>
                 <div class="cad-desc">
                     <!-- <input type=text class="" name=rg> -->
-                    <%= f.text_field :general_register, autofocus: true %> *
+                    <%= f.text_field :general_register, autofocus: true %>
+                    *
                 </div>
                 <div class="clear"></div>
 
@@ -96,7 +101,8 @@
                     CPF
                 </div>
                 <div class="cad-desc">
-                  <%= f.text_field :cpf,id: "cpf", autofocus: true,style: "width:350px" %> *
+                    <%= f.text_field :cpf,id: "cpf", autofocus: true,style: "width:350px" %>
+                    *
                     <!-- <input type=text class="" name=cpf id=cpf> -->
 
                 </div>
@@ -107,9 +113,9 @@
                 </div>
                 <div class="cad-desc">
                     <!-- <input type=text class="" name=nascimento id=nascimento style="width:120px" value=""> -->
-                    <%= f.text_field :birthday, :id => 'birthday_picker', class: 'form-control'%>
+                    <%= f.text_field :birthday, :id => 'birthday_picker', class: 'form-control'%>*
                     <!-- <%= f.date_field :birthday, autofocus: true,style: "width:120p" %> -->
-                     *
+
                 </div>
                 <div class="clear"></div>
 
@@ -117,15 +123,10 @@
                     Sexo
                 </div>
                 <div class="cad-desc">
-                    <label for="gender_male">
-                        <input type="radio" id="gender_male" value="M" name="sexo"/>
-                        Masculino
-                    </label>
-                    <label for="gender_female">
-                        <input type="radio" id="gender_female" value="F" name="sexo"/>
-                        Feminino
-                    </label>
-                     *
+                    <%= f.radio_button :gender, 'masculino' %>
+                    <%= f.label :gender,'Masculino', :value => 'masculino' %>
+                    <%= f.radio_button :gender, 'feminino' %>
+                    <%= f.label :gender, 'Feminino', :value => 'feminino' %>*
                 </div>
                 <div class="clear"></div>
 
@@ -133,7 +134,8 @@
                     CEP
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=cep id=cep>
+                    <%= f.text_field :cep,id: "cep" %>
+                    <!-- <input type=text class="" name=cep id=cep> -->
                 </div>
                 <div class="clear"></div>
 
@@ -141,13 +143,15 @@
                     Endereço
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=endereco style="width:300px">
+                    <%= f.text_field :adress,id: "adress", autofocus: true,style: "width:300px" %>
+                    <!-- <input type=text class="" name=endereco style="width:300px"> -->
                 </div>
                 <div class="cad-tit" style="width:40px">
                     Nº
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=numero style="width:60px">
+                    <%= f.number_field :cep,id: "adress_number",style: "width:60px" %>
+                    <!-- <input type=text class="" name=numero style="width:60px"> -->
                 </div>
                 <div class="clear"></div>
 
@@ -155,7 +159,8 @@
                     Complemento
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=complemento>
+                    <%= f.text_field :complement,id: "complement"%>
+                    <!-- <input type=text class="" name=complemento> -->
                 </div>
                 <div class="clear"></div>
 
@@ -163,7 +168,8 @@
                     Bairro
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=bairro>
+                    <%= f.text_field :district,id: "district"%>
+                    <!-- <input type=text class="" name=bairro> -->
                 </div>
                 <div class="clear"></div>
 
@@ -171,7 +177,8 @@
                     Cidade
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=cidade value="">
+                    <%= f.text_field :city,id: "city"%>
+                    <!-- <input type=text class="" name=cidade value=""> -->
                 </div>
                 <div class="clear"></div>
 
@@ -179,14 +186,17 @@
                     Telefone
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=telefone id=telefone style="width:120px"></div>
+                    <%= f.text_field :phone,id: "phone",class: "phone", autofocus: true,style: "width:120px" %>
+                    <!-- <input type=text class="" name=telefone id=telefone style="width:120px">-->
+                </div>
                 <div class="clear"></div>
 
                 <div class="cad-tit">
                     Celular
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=celular id=celular style="width:120px">
+                    <%= f.text_field :cel,id: "cel",class: "phone", autofocus: true,style: "width:120px" %>
+                    <!-- <input type=text class="" name=celular id=celular style="width:120px"> -->
                     *</div>
                 <div class="clear"></div>
 
@@ -194,7 +204,8 @@
                     Instituição de Ensino
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=instituicao id=instituicao style="width:400px">
+                    <%= f.text_field :university,id: "university",style: "width:400px"%>
+                    <!-- <input type=text class="" name=instituicao id=instituicao style="width:400px"> -->
                     *</div>
                 <div class="clear"></div>
 
@@ -202,7 +213,8 @@
                     Matícula
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=matricula id=matricula style="width:200px">
+                    <%= f.number_field :registration_id,id: "registration_id",style: "width:200px"%>
+                    <!-- <input type=text class="" name=matricula id=matricula style="width:200px"> -->
                     (Opcional, caso não possua)</div>
                 <div class="clear"></div>
 
@@ -210,19 +222,22 @@
                     Semestre
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=semestre id=semestre style="width:200px">
+                    <%= f.number_field :semester,id: "semester",style: "width:200px"%>
+                    <!-- <input type=text class="" name=semestre id=semestre style="width:200px"> -->
                     (Opcional, caso não possua matrícula)</div>
                 <div class="clear"></div>
 
                 <div class="cad-tit">Link Perfil Facebook
                 </div>
                 <div class="cad-desc">
-                    <input type=text class="" name=link_facebook id=link_facebook style="width:200px">
+                    <%= f.number_field :facebook_profile_link,id: "facebook_profile_link",style: "width:200px"%>
+                    <!-- <input type=text class="" name=link_facebook id=link_facebook style="width:200px"> -->
                     *</div>
                 <div class="clear"></div>
 
                 <div style="width: 500px; text-align: left; margin: 15px 10px 26px 75px;">
-                    <input type="checkbox" id="agree" name="agree">
+
+                    <!-- <input type="checkbox" id="agree" name="agree"> -->
                     Eu li e concordo com os
                     <a class='iframe' href="termos_uso.php">Termos de Uso</a>
                     do site.
@@ -234,9 +249,9 @@
             </div>
         </div>
         <%end%>
-    <!-- </form> -->
+        <!-- </form> -->
 
-</div>
+    </div>
 
 </div>
 <!-- end .span12 -->
