@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170409151508) do
+ActiveRecord::Schema.define(version: 20170413105151) do
+
+  create_table "comitees", force: :cascade do |t|
+    t.string   "name"
+    t.string   "grade"
+    t.integer  "limit"
+    t.float    "value_not_cotist"
+    t.float    "value_cotist"
+    t.datetime "start_date",       null: false
+    t.datetime "end_date",         null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",           null: false
