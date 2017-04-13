@@ -1,6 +1,9 @@
 class SiteController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   layout 'site'
+
+  def index
+  end
 
   def academic
   end
@@ -27,9 +30,6 @@ class SiteController < ApplicationController
   end
 
   def fortaleza
-  end
-
-  def index
   end
 
   def inscription
