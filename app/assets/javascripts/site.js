@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery_ujs
 //= require maskedinput
 //= require toastr
 jQuery(function($){

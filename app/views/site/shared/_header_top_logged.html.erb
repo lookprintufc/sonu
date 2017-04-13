@@ -22,7 +22,7 @@
                 <div class="fixed">
 
                     <!-- <a href="/cadastro" style="margin-right:20px">Cadastre-se</a> -->
-                    <%= link_to new_user_registration_path, style:"margin-right:20px" do%>
+                    <%= link_to destroy_user_session_path,:method => :delete, style:"margin-right:20px" do%>
                     Logout
                     <%end%>
                     <%= link_to user_session_path, class:"btn-blue-light" do%>
