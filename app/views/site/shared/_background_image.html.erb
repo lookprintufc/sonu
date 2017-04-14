@@ -18,8 +18,10 @@
             <ul>
 
               <li data-transition="fade" data-slotamount="7">
-                <a href="http://sonu.ufc.br/carta-de-apresentacao" target="_blank"><%= image_tag("/uploads/f144fed2497cff11ffb7e5166c8a63ff.jpg")%>
-                </li>
+                
+                <%= link_to( image_tag("/uploads/f144fed2497cff11ffb7e5166c8a63ff.jpg"), show_card_path ) %>
+                
+              </li>
 
                 <li data-transition="fade" data-slotamount="7">
                   <a href="http://sonu.ufc.br/comites" target="_blank"><%= image_tag("/uploads/929e543b7ea77acbd60400496226702d.jpg")%>
