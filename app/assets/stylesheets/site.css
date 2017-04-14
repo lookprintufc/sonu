@@ -59,9 +59,44 @@ Aqui está o erro:
 	width:400px;
 	height:250px;
 }
-
+/*academico*/
 #academico{
 	height:250px !important;
 	width:400px;
 	height:250px;
+}
+/*inscrições*/
+#inscricoes_imagem {
+	width:280px;
+	height: 328.15px;
+}
+
+#inscricoes_imagem2 {
+	width:280px;
+	height: 280px;
+}
+
+#inscricoes_imagem3 {
+	width:280px;
+	height: 190.9px;
+}
+
+#inscricoes_imagem4 {
+	width:280px;
+	height: 186.667px;
+}
+
+#inscricoes_imagem5 {
+	width:280px;
+	height: 274.4px;
+}
+
+#inscricoes_imagem6 {
+	width:280px;
+	height: 185.067px;
+}
+
+#inscricoes_imagem7 {
+	width:280px;
+	height: 202.05px;
 }
