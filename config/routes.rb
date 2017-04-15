@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-root 'crew/admins#dashboard',  as: :authenticated_admin_root
+# root 'crew/admins#dashboard',  as: :authenticated_admin_root
   namespace :crew do
     devise_for :admins,
     controllers:{

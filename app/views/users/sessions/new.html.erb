@@ -62,9 +62,15 @@
                     <h2 class="titulo">Ainda não é cadastrado?</h2>
                     <div class="descricao">
                         <div>
-                            <%= form_for new_registration_path(resource_name)  do |f|%>
-                            <%= f.submit "Cadastrar", class: 'btn btn-large btn-black'%><br />
+                            <!-- <%= form_for new_registration_path(resource_name)  do |f|%>
+                              <%= f.submit "Cadastrar", class: 'btn btn-large btn-black'%><br />
+                            <%end%> -->
+                            <%= link_to new_registration_path(resource_name) do%>
+                              <input type="submit" name="" value="Cadastrar" class='btn btn-large btn-black'>
                             <%end%>
+                            <!-- <%= link_to new_registration_path(resource_name)  do |f|%>
+                              <input,type: "submit" class: 'btn btn-large btn-black'>Cadastrar<br /></div>
+                            <%end%> -->
                         </div>
                     </div>
                 </div>
