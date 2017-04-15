@@ -1,0 +1,19 @@
+//= require admin/js/modernizr.min.js
+//= require jquery
+//= require jquery_ujs
+//= require admin/js/detect.js
+//= require admin/js/fastclick.js
+//= require admin/js/jquery.slimscroll.js
+//= require admin/js/jquery.blockUI.js
+//= require admin/js/waves.js
+//= require admin/js/jquery.nicescroll.js
+//= require admin/js/jquery.scrollTo.min.js
+//= require admin/plugins/jquery-knob/jquery.knob.js
+//= require admin/plugins/morris/morris.min.js
+//= require admin/plugins/raphael/raphael-min.js
+//= require admin/pages/jquery.dashboard.js
+//= require admin/js/jquery.core.js
+//= require admin/js/jquery.app.js
+//= require admin/js/modernizr.min.js
+
+var resizefunc = [];
