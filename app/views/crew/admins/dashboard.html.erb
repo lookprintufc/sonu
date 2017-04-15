@@ -80,9 +80,10 @@
                             </li>
 
                             <li>
-                                <a href="#" class="text-custom">
-                                    <i class="zmdi zmdi-power"></i>
-                                </a>
+                              <%=link_to destroy_crew_admin_session_path, :method => :delete, class: "text-custom"  do %>
+                                    <i class="zmdi zmdi-power">
+                                    </i>
+                                <%end%>
                             </li>
                         </ul>
                     </div>
