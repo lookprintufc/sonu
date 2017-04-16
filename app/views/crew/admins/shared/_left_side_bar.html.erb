@@ -1,0 +1,89 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+    <!-- <div class="sidebar-inner slimscrollleft"> -->
+    <!-- Para ficar sem o scroll -->
+    <div class="sidebar-inner">
+
+        <!-- User -->
+        <div class="user-box">
+            <!-- <div class="user-img"> -->
+            <!-- <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive"> -->
+            <!-- <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div> -->
+            <!-- </div> --><br>
+            <h5>
+                <a href="#"><%=@admin.email%></a>
+            </h5>
+            <ul class="list-inline">
+                <li>
+                    <a href="#">
+                        <i class="zmdi zmdi-settings" hint="Editar"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <%=link_to destroy_crew_admin_session_path, :method => :delete, class: "text-custom"  do %>
+                    <i class="zmdi zmdi-power" hint="Deslogar"></i>
+                    <%end%>
+                </li>
+            </ul>
+        </div>
+        <!-- End User -->
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <ul>
+                <li class="text-muted menu-title">Navegação</li>
+
+                <li>
+                    <%= link_to crew_users_path, class: "waves-effect active" do%>
+                    <!-- <a href="index.html" class="waves-effect active"> -->
+                    <i class="zmdi zmdi-accounts-alt"></i>
+                    <span>
+                        Cadastrados</span>
+                    <!-- </a> -->
+                    <%end%>
+                </li>
+
+                <li>
+                    <!-- crew_users_waiting_list_path -->
+                    <%= link_to crew_users_path class: "waves-effect" do%>
+
+                    <i class="zmdi zmdi-hourglass"></i>
+                    <span>
+                        Lista de Espera
+                    </span>
+                    <%end%>
+                </li>
+
+                <li>
+                    <!-- crew_users_waiting_list_path -->
+                    <%= link_to crew_comitees_path class: "waves-effect" do%>
+
+                    <i class="zmdi zmdi-calendar"></i>
+                    <span>
+                        Comitês
+                    </span>
+                    <%end%>
+                </li>
+
+                <li>
+                    <!-- crew_users_waiting_list_path -->
+                    <%= link_to crew_comitees_path class: "waves-effect" do%>
+
+                    <i class="zmdi zmdi-account-o"></i>
+                    <span>
+                        Administradores
+                    </span>
+                    <%end%>
+                </li>
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>
+<!-- Left Sidebar End -->
