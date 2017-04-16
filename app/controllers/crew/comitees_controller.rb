@@ -1,4 +1,4 @@
-class Crew::ComiteeController < ApplicationController
+class Crew::ComiteesController < ApplicationController
   before_action :load_comitee, only: [:show, :edit, :update, :destroy]
 
   def index
