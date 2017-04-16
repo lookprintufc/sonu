@@ -16,15 +16,39 @@
                                 <th>Data Início</th>
                                 <th class="">Data Final</th>
                                 <th class="">Preço</th>
+                                <th class="">Preço por Cotas</th>
                                 <th>Grade</th>
+                                <th>Limite</th>
                             </tr>
                         </thead>
                         <tbody>
+                          <tr>
                             <% j=1 %>
-                            <% @comitees.each do |comitees| %>
-                            <tr>
-                                </tr>
-                                <% end %>
+                            <% @comitees.each do |comitee| %>
+                              <td>
+                                <%=comitee.name%>
+                              </td>
+                              <td>
+                                <%=comitee.start_date%>
+                              </td>
+                              <td>
+                                <%=comitee.end_date%>
+                              </td>
+                              <td>
+                                <%=comitee.value_not_cotist%>
+                              </td>
+                              <td>
+                                <%=comitee.value_cotist%>
+                              </td>
+                              <td>
+                                <%=comitee.grade%>
+                              </td>
+                              <td>
+                                <%=comitee.limit%>
+                              </td>
+
+                              </tr>
+                              <% end %>
                             </tbody>
                         </table>
                     </div>
