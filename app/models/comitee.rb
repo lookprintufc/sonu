@@ -1,5 +1,7 @@
 class Comitee < ApplicationRecord
 
+  has_and_belongs_to_many :users
+
   def is_full?
     self.users.count >= self.limit
   end

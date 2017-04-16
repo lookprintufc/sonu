@@ -1,5 +1,7 @@
-class Crew::ComiteesController < ApplicationController
+class Crew::ComiteesController < Crew::BaseController
   before_action :load_comitee, only: [:show, :edit, :update, :destroy]
+
+  layout 'admin_dashboard'
 
   def index
     @comitees = Comitee.all
