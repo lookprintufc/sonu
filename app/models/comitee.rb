@@ -26,6 +26,26 @@ class Comitee < ApplicationRecord
     nil
   end
 
+  def is_active
+    now = Time.now
+    Comitee.all.each do |comitee|
+      if now > comitee.start_date && now < comitee.end_date
+        return true
+      end
+    end
+    return false
+  end
+
+  def is_passed
+    now = Time.now
+    Comitee.all.each do |comitee|
+      if now > comitee.end_date
+        return true
+      end
+    end
+    return false
+  end
+
     # def qnt_pays_total
     #   self.users.joins(:payment).where("payments.portion_paid=payments.portions").count
     # end

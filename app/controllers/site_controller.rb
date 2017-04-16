@@ -1,5 +1,5 @@
 class SiteController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!,:get_comitees
   layout 'site'
 
   def index

@@ -5,4 +5,7 @@ class ApplicationController < ActionController::Base
       @header_top = "header_top_logged"
     end
   end
+  def get_comitees
+    @comitees = Comitee.all
+  end
 end
