@@ -72,7 +72,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     confirmations: 'users/confirmations'
   }
-
+  get 'users/:id' => 'users#show'
     #routes for :users
 
 
