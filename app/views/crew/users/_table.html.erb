@@ -14,8 +14,8 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Email</th>
-                                <th class="noExport">Inscrito</th>
-                                <th hidden="">Cotista</th>
+                                <th class="">Inscrito</th>
+                                <th class="">Cotista</th>
                                 <th>Data de Inscr.</th>
                                 <th class="noExport"></th>
                                 <th class="noExport"></th>
@@ -29,7 +29,7 @@
                                 <td><%= user.name.nil? ? 'Não Informado' : user.name.titleize%></td>
                                 <td><%= user.email%></td>
                                 <td></td>
-
+                                <td></td>
                                 <td><%= user.created_at.strftime("%d-%m-%Y  %H:%M:%S") %></td>
                                 <td>
                                     <%= link_to edit_crew_user_path(user), target: "_blank", method: :patch do %>
