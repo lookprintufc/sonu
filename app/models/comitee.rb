@@ -1,9 +1,22 @@
 class Comitee < ApplicationRecord
+  has_many :users
+  mount_uploader :avatar, AvatarUploader
+  enum type_event: { "Ensino Superior": 1,  "Ensino Médio": 0}
 
-  has_and_belongs_to_many :users
+  def is_full?(user)
+    if user.is_cotist == true
+      self.users.count >= self.limit_cotist.to_i
+    else
+      self.users.count >= self.limit.to_i
+    end
+  end
 
-  def is_full?
-    self.users.count >= self.limit
+  def check_limit_cotist_full?(user)
+    if user.is_cotist == true
+      self.users.count >= self.limit_cotist
+    else
+      true
+    end
   end
 
   def self.get_actives
@@ -28,10 +41,8 @@ class Comitee < ApplicationRecord
 
   def is_active
     now = Time.now
-    Comitee.all.each do |comitee|
-      if now > comitee.start_date && now < comitee.end_date
-        return true
-      end
+    if now > self.start_date && now < self.end_date
+      return true
     end
     return false
   end
@@ -46,16 +57,16 @@ class Comitee < ApplicationRecord
     return false
   end
 
-    # def qnt_pays_total
-    #   self.users.joins(:payment).where("payments.portion_paid=payments.portions").count
-    # end
-    #
-    # def qnt_pays_partial
-    #   self.users.joins(:payment).where("payments.portion_paid>0").where("payments.portion_paid!=payments.portions").count
-    # end
+  # def qnt_pays_total
+  #   self.users.joins(:payment).where("payments.portion_paid=payments.portions").count
+  # end
+  #
+  # def qnt_pays_partial
+  #   self.users.joins(:payment).where("payments.portion_paid>0").where("payments.portion_paid!=payments.portions").count
+  # end
 
-    # def self.totalLimit
-    #   self.sum(:limit)
-    # end
+  # def self.totalLimit
+  #   self.sum(:limit)
+  # end
 
 end

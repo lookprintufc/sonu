@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170416040422) do
+ActiveRecord::Schema.define(version: 20170421233714) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20170416040422) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "category_events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "comitee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comitees", force: :cascade do |t|
     t.string   "name"
     t.string   "grade"
@@ -40,6 +47,15 @@ ActiveRecord::Schema.define(version: 20170416040422) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "avatar"
+    t.integer  "type_event"
+    t.text     "description"
+    t.integer  "limit_cotist"
+    t.text     "question_1"
+    t.text     "question_2"
+    t.string   "question_3"
+    t.string   "question_4"
+    t.string   "question_5"
+    t.boolean  "dual"
   end
 
   create_table "comitees_users", id: false, force: :cascade do |t|
@@ -48,23 +64,23 @@ ActiveRecord::Schema.define(version: 20170416040422) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",           null: false
-    t.string   "encrypted_password",     default: "",           null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,            null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "name",                   default: "",           null: false
-    t.string   "general_register",       default: "",           null: false
-    t.string   "cpf",                    default: "",           null: false
-    t.string   "gender",                 default: "",           null: false
-    t.date     "birthday",               default: '2009-01-01', null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "name",                   default: "",    null: false
+    t.string   "general_register",       default: "",    null: false
+    t.string   "cpf",                    default: "",    null: false
+    t.string   "gender",                 default: "",    null: false
+    t.date     "birthday"
     t.string   "cep"
     t.string   "state"
     t.text     "adress"
@@ -73,21 +89,33 @@ ActiveRecord::Schema.define(version: 20170416040422) do
     t.string   "city"
     t.string   "district"
     t.string   "phone"
-    t.string   "cel",                    default: "",           null: false
-    t.string   "university",             default: "",           null: false
+    t.string   "cel",                    default: "",    null: false
+    t.string   "university",             default: "",    null: false
     t.integer  "registration_id"
     t.integer  "semester"
-    t.text     "facebook_profile_link",  default: "",           null: false
+    t.text     "facebook_profile_link",  default: "",    null: false
     t.boolean  "completed"
     t.boolean  "active",                 default: true
     t.integer  "lot_id"
     t.datetime "paid_on"
     t.integer  "room_id"
-    t.index ["birthday", "gender", "cel"], name: "index_users_on_birthday_and_gender_and_cel", unique: true
+    t.string   "avatar"
+    t.integer  "comitee_id"
+    t.boolean  "is_cotist",              default: false
+    t.string   "cpf_dual"
+    t.string   "answer_1"
+    t.string   "answer_2"
+    t.string   "answer_3"
+    t.string   "answer_4"
+    t.string   "answer_5"
+    t.text     "justify"
+    t.text     "experience"
+    t.string   "face_link"
+    t.string   "categories_ids"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["name", "general_register", "cpf"], name: "index_users_on_name_and_general_register_and_cpf", unique: true
+    t.index ["facebook_profile_link"], name: "index_users_on_facebook_profile_link", unique: true
+    t.index ["general_register", "cpf"], name: "index_users_on_general_register_and_cpf", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["university", "facebook_profile_link"], name: "index_users_on_university_and_facebook_profile_link", unique: true
   end
 
 end

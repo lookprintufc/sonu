@@ -1,102 +1,26 @@
-// Place all the styles related to the site controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
 /*
-
-
-
 *= require sonu_template/_layout/css/base.css
 *= require sonu_template/_layout/css/grid.css
-Aqui está o erro:
 *= require sonu_template/_layout/css/elements.css
 *= require sonu_template/_layout/css/layout.css
 *= require sonu_template/_layout/css/wide.css
+
 *= require sonu_template/_layout/js/revolutionslider/css/settings.css
 *= require sonu_template/_layout/js/revolutionslider/css/custom.css
 *= require sonu_template/_layout/js/bxslider/jquery.bxslider.css
 *= require sonu_template/_layout/js/magnificpopup/magnific-popup.css
+
+
 *= require sonu_template/_layout/css/iconfontcustom/iconfontcustom.css
 *= require sonu_template/_layout/css/fontawesome/font-awesome.min.css
 *= require sonu_template/_layout/css/animate/animate.min.css
+*= require sonu_template/_layout/css/animate/animate.min.css
+
+*= require sonu_template/_layout/slider/css/fullwidth.css
+*= require sonu_template/_layout/slider/rs-plugin/css/settings.css
+*= require sonu_template/_layout/css/colorbox.css
+*= require sonu_template/_layout/js/multi-selec/css/multi-select.css
 *= require toastr
 
  */
-
-@import "font-awesome";
-
-.footer{
-  background-image:url("bg-box1.png");
-}
-
-#header-top {
-	height: 24px;
-}
-
-#footer-bottom.footer {
-	background-color: #303745 !important;
-	background-position:100% 100%;
-	height:90px;
-	background-image: url("bg-box1.png");
-	/*box-shadow:0px 0px 2px #000;*/
-}
-
-#parceiros {
-	background-image: url("bg-box-2.jpg");
-}
-
-#cadastre-se {
-	background-image:url("bg-box.png");
-}
-
-/*em secretariado */
-.fotoborda {
-	height: 150px;
-}
-
-/*comite */
-#comitee{
-	height:250px !important;
-	width:400px;
-	height:250px;
-}
-/*academico*/
-#academico{
-	height:250px !important;
-	width:400px;
-	height:250px;
-}
-/*inscrições*/
-#inscricoes_imagem {
-	width:280px;
-	height: 328.15px;
-}
-
-#inscricoes_imagem2 {
-	width:280px;
-	height: 280px;
-}
-
-#inscricoes_imagem3 {
-	width:280px;
-	height: 190.9px;
-}
-
-#inscricoes_imagem4 {
-	width:280px;
-	height: 186.667px;
-}
-
-#inscricoes_imagem5 {
-	width:280px;
-	height: 274.4px;
-}
-
-#inscricoes_imagem6 {
-	width:280px;
-	height: 185.067px;
-}
-
-#inscricoes_imagem7 {
-	width:280px;
-	height: 202.05px;
-}

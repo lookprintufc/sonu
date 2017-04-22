@@ -10,8 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         # @user.active = true
         set_minimum_password_length
         if @user.save
-            flash[:success] = 'Inscrição realizada. Agora você pode desfrutar dos eventos da SONU'
-            redirect_to '/'
+            flash[:success] = 'Inscrição realizada. Agora você pode desfrutar dos eventos da SONU.'
+            redirect_to new_user_session_path
         else
             flash[:error] = 'Um erro ocorreu, não foi possível processar sua inscrição'
             redirect_to new_user_registration_path

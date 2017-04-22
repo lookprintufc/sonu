@@ -41,9 +41,11 @@ class Crew::ComiteesController < Crew::BaseController
     @comitee = Comitee.find(params[:id])
   end
 
-  def Comitee_params
-    params.require(:Comitee).permit(:name, :grade, :limit, :value_cotist,
-                                :value_not_cotist, :start_date, :end_date)
+  def comitee_params
+    params.require(:comitee).permit(:name, :limit, :value_cotist,
+                                :value_not_cotist, :start_date, :end_date, :type_event, 
+                                :description, :question_1, :question_2, :question_3, :question_4, :question_5,
+                                :dual, :limit_cotist, :avatar)
   end
 
 end

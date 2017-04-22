@@ -4,7 +4,7 @@ class AddAtributesToUsers < ActiveRecord::Migration[5.0]
         add_column :users, :general_register, :string, null: false, default: ''
         add_column :users, :cpf, :string, null: false, default: ''
         add_column :users, :gender, :string, null: false, default: ''
-        add_column :users, :birthday, :date, null: false, default: '2009-01-01 00:00:00'
+        add_column :users, :birthday, :date
         add_column :users, :cep, :string
         add_column :users, :state, :string
         add_column :users, :adress, :text
@@ -25,8 +25,7 @@ class AddAtributesToUsers < ActiveRecord::Migration[5.0]
         add_column :users, :paid_on, :datetime
         add_column :users, :room_id, :integer
 
-        add_index :users, [:name, :general_register, :cpf], unique: true
-        add_index :users, [:birthday, :gender, :cel], unique: true
-        add_index :users, [:university, :facebook_profile_link], unique: true
+        add_index :users, [:general_register, :cpf], unique: true
+        add_index :users, [:facebook_profile_link], unique: true
       end
 end
