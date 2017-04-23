@@ -51,7 +51,7 @@
       
       <% flash.each do |key, value| %>
         <script type="text/javascript">
-           toastr.<%= key %>('<span><%= value %></span>', "Aviso");
+           toastr.<%= key=='notice' ? 'success' : key %>('<span><%= value %></span>', "Aviso");
         </script>
       <% end %>
 </html>
