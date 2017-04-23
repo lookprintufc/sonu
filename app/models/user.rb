@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   belongs_to :comitee
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :confirmable
+    :recoverable, :rememberable, :trackable, :validatable
   #validates_presence_of :email, :name ,:general_register,:cpf,:birthday,:gender,:university, :facebook_profile_link
   
   #validates :cpf, presence: true, uniqueness: true, cpf: true
