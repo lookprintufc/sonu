@@ -66,15 +66,7 @@
                         <div class="cad-tit"> Sexo </div>
                         <div class="cad-desc"> 
                        
-                        <label for="gender_male">
-                           <%= f.radio_button :gender, 'M' %> 
-                            Masculino
-                        </label>
-
-                        <label for="gender_female">
-                            <%= f.radio_button :gender, 'F' %> 
-                            Feminino
-                        </label>
+                         <%= f.select(:gender,['Masculino', 'Feminino', 'Prefiro não declarar'], {}, { :class => 'form-control select2' }) %>
                          *
                         </div>
                         <div class="clear"></div>

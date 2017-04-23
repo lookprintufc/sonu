@@ -4,16 +4,16 @@ class User < ApplicationRecord
 
   belongs_to :comitee
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable
-  #validates_presence_of :email, :name ,:general_register,:cpf,:birthday,:gender,:university, :facebook_profile_link
+    :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  validates_presence_of :email, :name ,:general_register,:cpf,:birthday,:gender,:university, :facebook_profile_link
   
-  #validates :cpf, presence: true, uniqueness: true, cpf: true
+  validates :cpf, presence: true, uniqueness: true, cpf: true
 
   #VALIDAÇÕES DO EVENTO
-  #validates_presence_of :justify, :on => :create 
-  #validates_presence_of :experience, :on => :create 
-  #validates_presence_of :face_link, :on => :create 
-  #validates_with QuestionsValidator
+  validates_presence_of :justify, :on => :create 
+  validates_presence_of :experience, :on => :create 
+  validates_presence_of :face_link, :on => :create 
+  validates_with QuestionsValidator
   #EVENTOS ANSWER
 
   def set_name_description
