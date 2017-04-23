@@ -1,0 +1,161 @@
+<!-- end #header-top -->
+<div id="header">
+
+    <!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <div class="row">
+        <a href="/">
+            <!-- <img style="position: absolute; top: -10px; width: 190px; z-index:9999" class="responsive-img" alt="" src="images/logo.png"> -->
+
+            <%=  image_tag("logo.png", class: 'responsive-img',style:'position: absolute; top: -10px; width: 190px; z-index:9999')%>
+        </a>
+    </div>
+    <div class="row">
+        <div class="span3">
+
+            <!-- // Logo // -->
+            <a href="index.html" id="logo"></a>
+
+        </div>
+        <!-- end .span3 -->
+        <div class="span9">
+
+            <!-- // Mobile menu trigger // -->
+            <a href="#" id="mobile-menu-trigger">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <!-- // Menu // -->
+            <ul class="sf-menu" id="menu">
+
+                <li >
+                    <a href="">Sobre a SONU</a>
+                    <ul>
+                        <li>
+                            <%= link_to show_card_path do%>
+                            Carta de Apresentação
+                            <%end%>
+                            <!-- <a href="/carta-de-apresentacao">Carta de Apresentação</a> -->
+                        </li>
+                        <li>
+                            <%= link_to muns_path do%>
+                            O que são MUN's? (Model United Nations)
+                            <%end%>
+                        </li>
+                        <li>
+                          <%= link_to story_path do%>
+                            História da Sonu
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to secretary_path do%>
+                            O Secretariado
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to diretory_path do%>
+                            A Diretoria
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to faq_path do%>
+                           FAQ
+                          <%end%>
+                        </li>
+
+                    </ul>
+                </li>
+                <li >
+                    <a href="">SONU 2017</a>
+                    <ul>
+                        <li>
+                          <%= link_to comitees_path do%>
+                            Comitês
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to cronogram_path do%>
+                            Cronograma
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to parties_path do%>
+                            Festas
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to fortaleza_path do%>
+                            Fortaleza
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to sonu_certificates_path do%>
+                          Certificados SPNU
+                          <%end%>
+                        </li>
+                    </ul>
+                </li>
+
+                <li >
+                    <a href="#">Outros Projetos</a>
+                    <ul>
+                        <li>
+                          <%= link_to academic_path do%>
+                            SONU Acadêmico
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to beta_path do%>
+                            SONU Beta
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to schools_path do%>
+                            SONU Escolas
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to speeches_path do%>
+                            Minicursos/Palestras
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to solidary_path do%>
+                            SONU Solidário
+                          <%end%>
+                        </li>
+                        <li>
+                          <%= link_to certificates_path do%>
+                            Certificados
+                          <%end%>
+                        </li>
+                    </ul>
+                </li>
+
+                <li >
+                  <%= link_to partners_path do%>
+                    Parceiros
+                  <%end%>
+                </li>
+                <li >
+                  <%= link_to inscription_path do%>
+                    Inscrições
+                  <%end%>
+                </li>
+                <li >
+                  <%= link_to contact_path do%>
+                    Contato
+                  <%end%>
+                </li>
+
+            </ul>
+
+        </div>
+        <!-- end .span9 -->
+    </div>
+    <!-- end .row -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+</div>
+<!-- end #header -->

@@ -1,0 +1,115 @@
+<!-- <div class="login-box">
+
+   <div class="login-box-body">
+      <div class="row">
+         <div class="col-md-12">
+            <%= image_tag("logo.png", :alt => "ECEJ",:class => "profile-image-login") %>
+            <p class="text-center">Painel Administrativo</p>
+         </div>
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name),  html: {:class => 'login-form'} ) do |f| %>
+      <div class="form-group has-feedback">
+         <%= f.email_field :email, id: 'email', class: 'form-control', placeholder: 'example@mail.com', autofocus: true %>
+         <i class="fa fa-user  form-control-feedback"></i>
+      </div>
+      <div class="form-group has-feedback">
+         <%= f.password_field :password, id:'password', class: 'form-control', autocomplete: "off", placeholder: 'Senha' %>
+         <i class="fa fa-lock  form-control-feedback"></i>
+      </div>
+      <div class="row">
+
+         <div class="col-xs-12"  style="margin-bottom: 5px">
+            <button type="submit" style="" class="btn btn-primary btn-block btn-flat">ENTRAR</button>
+         </div>
+
+      </div>
+      <% end %>
+
+      <div class="row">
+         <div class="col-xs-6">
+            <%= link_to "Esqueceu sua senha?", new_password_path(resource_name) %>
+            <br>
+         </div>
+      </div>
+   </div>
+
+</div> -->
+
+
+
+        <div class="account-pages"></div>
+        <div class="clearfix"></div>
+        <div class="wrapper-page">
+            <div class="text-center">
+              <div class="col-md-12">
+                 <%= image_tag("logo.png", :alt => "ECEJ",:class => "profile-image-login") %>
+                 <p class="text-center">Painel Administrativo</p>
+              </div>
+                <!-- <a href="index.html" class="logo"><span>Admin<span>to</span></span></a>
+                <h5 class="text-muted m-t-0 font-600">Responsive Admin Dashboard</h5> -->
+            </div>
+        	<div class="m-t-40 card-box">
+                <div class="text-center">
+                    <h4 class="text-uppercase font-bold m-b-0">Login</h4>
+                </div>
+                <div class="panel-body">
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name),  html: {class: "form-horizontal m-t-20" } ) do |f| %>
+                    <!-- <form class="form-horizontal m-t-20" action="index.html"> -->
+
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <!-- <input class="form-control" type="text" required="" placeholder="Username"> -->
+                                <%= f.email_field :email, id: 'email', class: 'form-control', placeholder: 'exemplo@mail.com', autofocus: true %>
+                                <!-- <i class="fa fa-user  form-control-feedback"></i> -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                              <%= f.password_field :password, id:'password', class: 'form-control', autocomplete: "off", placeholder: 'Senha' %>
+                                <!-- <input class="form-control" type="password" required="" placeholder="Password"> -->
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group ">
+                            <div class="col-xs-12">
+                                <div class="checkbox checkbox-custom">
+                                    <input id="checkbox-signup" type="checkbox">
+                                    <label for="checkbox-signup">
+                                        Remember me
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div> -->
+
+                        <div class="form-group text-center m-t-30">
+                            <div class="col-xs-12">
+                              <button type="submit" style="" class="btn btn-custom btn-bordred btn-block waves-effect waves-light">ENTRAR</button>
+                                <!-- <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit">Log In</button> -->
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-30 m-b-0">
+                            <div class="col-sm-12">
+                                          <%= link_to new_password_path(resource_name), class: "text-muted" do%>
+                                            <i class="fa fa-lock m-r-5"></i> Esqueceu sua senha?
+                                          <%end%>
+                                <!-- <a href="page-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a> -->
+                            </div>
+                        </div>
+                              <% end %>
+                    <!-- </form> -->
+
+                </div>
+            </div>
+            <!-- end card-box-->
+
+            <!-- <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="text-muted">Don't have an account? <a href="page-register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
+                </div>
+            </div> -->
+
+        </div>
+        <!-- end wrapper page -->

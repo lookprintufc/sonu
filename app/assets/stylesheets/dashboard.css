@@ -1,0 +1,22 @@
+/*
+
+
+*= require admin/plugins/morris/morris.css
+*= require admin/css/bootstrap.min.css
+*= require admin/css/core.css
+*= require admin/css/components.css
+*= require admin/css/icons.css
+*= require admin/css/pages.css
+*= require admin/css/menu.css
+*= require admin/css/responsive.css
+
+*= require admin/plugins/datatables/jquery.dataTables.min.css
+*= require admin/plugins/datatables/buttons.bootstrap.min.css
+*= require admin/plugins/datatables/fixedHeader.bootstrap.min.css
+*= require admin/plugins/datatables/responsive.bootstrap.min.css
+*= require admin/plugins/datatables/scroller.bootstrap.min.css
+
+*= require toastr
+*= require admin/plugins/fileuploads/css/dropify.min.css
+
+ */

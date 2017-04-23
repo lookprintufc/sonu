@@ -1,0 +1,147 @@
+
+<div id="content">
+        
+        <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            
+            <div id="page-header">
+                
+                <div class="row">
+                    <div class="span12">
+                        
+                        <h2> Cadastro </h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+            
+            <div class="row">
+                <div class="span12">
+                    
+                    
+                    <div>
+                
+                <div style="text-align:center; margin-bottom:30px"> * Campos Obrigatórios </div>
+                
+                
+    
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { id: "formu", method: :post }) do |f| %>
+                <div class="quadrado">
+                    
+                    <div class="descricao">
+                    
+                        <div class="cad-tit"> Nome Completo </div>
+                        <div class="cad-desc"><%= f.text_field :name, id:"name", style: "width:350px" %> *</div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Email </div>
+                        <div class="cad-desc"> <%= f.email_field :email, id:"email", placeholder:'',  style: "width:350px" %> *</div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Confirmar Email</div>
+                        <div class="cad-desc"> <input type=text class="" name=confemail style="width:350px" value=""> * </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Senha </div>
+                        <div class="cad-desc"> <%= f.password_field :password, id:"senha", style: "width:150px" %> * </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Confirmar Senha </div>
+                        <div class="cad-desc"> <input type=password class="" name=confsenha style="width:150px"> * </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> RG </div>
+                        <div class="cad-desc"> <%= f.text_field :general_register, id:"rg" %> * </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> CPF </div>
+                        <div class="cad-desc"> <%= f.text_field :cpf, id:"cpf" %> * </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Data de Nascimento </div>
+                        <div class="cad-desc"> <%= f.text_field :birthday, id:"birthday", style: "width:120px" %>  * </div>
+                        <div class="clear"></div>
+                        
+                        
+                        <div class="cad-tit"> Sexo </div>
+                        <div class="cad-desc"> 
+                       
+                        <label for="gender_male">
+                           <%= f.radio_button :gender, 'M' %> 
+                            Masculino
+                        </label>
+
+                        <label for="gender_female">
+                            <%= f.radio_button :gender, 'F' %> 
+                            Feminino
+                        </label>
+                         *
+                        </div>
+                        <div class="clear"></div>
+                        
+
+                        <div class="cad-tit"> CEP </div>
+                        <div class="cad-desc"> <%= f.text_field :cep, id:"cep" %>  </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Endereço </div>
+                        <div class="cad-desc"> <%= f.text_field :adress, id:"adress", style: "width:300px" %> </div>
+                        <div class="cad-tit" style="width:40px"> Nº </div>
+                        <div class="cad-desc">  <%= f.text_field :adress_number, id:"adress_number", style: "width:60px" %> </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Complemento </div>
+                        <div class="cad-desc"> <%= f.text_field :complement, id:"complement" %> </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Bairro </div>
+                        <div class="cad-desc">  <%= f.text_field :district, id:"district" %> </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Cidade </div>
+                    
+                        <div class="cad-desc"> <%= f.text_field :city, id:"city" %> </div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Telefone </div>
+                        <div class="cad-desc"> <%= f.text_field :phone, id:"phone", style: "width:120px" %></div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Celular </div>
+                        <div class="cad-desc"> <%= f.text_field :cel, id:"cel", style: "width:120px" %> *</div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Instituição de Ensino </div>
+                        <div class="cad-desc"> <%= f.text_field :university, id:"university", style: "width:400px" %> *</div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Matícula </div>
+                        <div class="cad-desc"> <%= f.text_field :registration_id, id:"registration_id", style: "width:200px" %> (Opcional, caso não possua)</div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit"> Semestre </div>
+                        <div class="cad-desc"> <%= f.text_field :semester, id:"semester", style: "width:200px" %> (Opcional, caso não possua matrícula)</div>
+                        <div class="clear"></div>
+                        
+                        <div class="cad-tit">Link Perfil Facebook  </div>
+                        <div class="cad-desc"> <%= f.text_field :facebook_profile_link, id:"facebook_profile_link", style: "width:200px" %> *</div>
+                        <div class="clear"></div>
+                        
+                        <div style="width: 500px; text-align: left; margin: 15px 10px 26px 75px;"> <input type="checkbox" id="agree" name="agree"> Eu li e concordo com os <a class='iframe' href="/termos.html">Termos de Uso</a> do site. </div>
+                        
+                        
+                        <div style="text-align:center"> <input type=submit value=Cadastrar> </div>
+                    </div>
+                </div>
+                <% end %>
+                
+                
+                
+            </div>
+                    
+                </div><!-- end .span12 -->
+            </div><!-- end. row -->
+            
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        </div>

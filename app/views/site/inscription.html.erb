@@ -1,0 +1,92 @@
+<div id="content">
+   <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+   <div id="page-header">
+      <div class="row">
+         <div class="span12">
+            <h2>
+               Inscrições 
+            </h2>
+         </div>
+         <!-- end .span12 -->
+      </div>
+      <!-- end .row -->
+   </div>
+   <!-- end #page-header -->
+   <div class="row">
+      <div class="span12">
+         <h3 style="margin-bottom:30px; margin-top:20px" class="headline">
+            <span>Inscrições Abertas</span>
+         </h3>
+         <% @comitees.each do |comitee| %>
+         <% if comitee.is_active %>
+         <div style="float:left; margin-right:30px; margin-bottom:30px; width:290px; min-height:400px">
+            <%= link_to show_comitee_path(comitee) do %>
+            <%= image_tag("/uploads/d59c7698b58cd006b608ef32f8a744b8.png" ,class:"fotoborda", id:"inscricoes_imagem",style: "width:280px") %>
+            <% end %>
+            <div>
+               <h4>
+                  <%= link_to show_comitee_path(comitee) do %><%=comitee.name%><% end %>
+               </h4>
+            </div>
+            <div style="text-align:left">
+               <i class="fa fa-calendar"></i>
+               <%=comitee.start_date%>
+            </div>
+            <div style="text-align:left">
+               <%=comitee.grade%>
+            </div>
+            <!--
+               <div style="text-align:left">
+                   <i class="fa fa-clock-o"></i>
+                   Fila de Espera</div>-->
+            <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>    
+            <span class="label label-success">INSCRITO</span>
+            <% end %>
+         </div>
+         <%end%>
+         <%end%>
+      </div>
+      <!-- end .span12 -->
+   </div>
+   <!-- end. row -->
+   <div class="row">
+      <div class="span12">
+         <h3 style="margin-bottom:30px; margin-top:20px" class="headline">
+            <span>Inscrições Encerradas</span>
+         </h3>
+         <% @comitees.each do |comitee| %>
+         <% if comitee.is_passed %>
+         <div style="float:left; margin-right:30px; margin-bottom:30px; width:290px; min-height:400px">
+            <%= link_to show_comitee_path(comitee) do %>
+            <%= image_tag("/uploads/d59c7698b58cd006b608ef32f8a744b8.png" ,class:"fotoborda", id:"inscricoes_imagem",style: "width:280px")%>
+            <% end %>
+            <div>
+               <h4>
+                  <%= link_to show_comitee_path(comitee) do %><%=comitee.name%><% end %>
+               </h4>
+            </div>
+            <div style="text-align:left">
+               <i class="fa fa-calendar"></i>
+               <%=comitee.start_date%>
+            </div>
+            <div style="text-align:left">
+               <%=comitee.grade%>
+            </div>
+            <!--
+            <div style="text-align:left">
+               <i class="fa fa-clock-o"></i>
+               Fila de Espera
+            </div>
+            -->
+            <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>    
+            <span class="label label-success">INSCRITO</span>
+            <% end %>
+         </div>
+         <%end%>
+         <%end%>
+      </div>
+      <!-- end .span12 -->
+   </div>
+   <!-- end. row -->
+   <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+</div>

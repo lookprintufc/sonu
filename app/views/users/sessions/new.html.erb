@@ -1,0 +1,86 @@
+<div id="content">
+
+    <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+     <div id="page-header">
+                
+                <div class="row">
+                    <div class="span12">
+                        
+                        <h2> Login </h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+
+
+            
+    <div class="row">
+        <div class="span12">
+
+            <div>
+
+                <!-- <form action='' method='post'> -->
+                <input type=hidden name=logar value=1>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), type: 'hidden') do |f| %>
+                <div class="quadrado-l1">
+                    <h2 class="titulo">Já possui cadastro?</h2>
+                    <div class="descricao">
+                        <!-- <div style="padding:5px 0px 0px 0px"> Email </div> -->
+                        <div style="padding:5px 0px 0px 0px">Email</div>
+                        <!-- <div style="padding:2px 0px 10px 0px"> <input type=text  name=email style="width:250px"> </div> -->
+                        <div style="padding:2px 0px 10px 0px">
+                            <%= f.email_field :email, autofocus: true,style: "width:250px" %></div>
+
+                        <div style="padding:5px 0px 0px 0px">
+                            Senha</div>
+
+                        <div style="padding:2px 0px 10px 0px">
+                            <%= f.password_field :password, autocomplete: "off",style:"width:250px" %>
+                        </div>
+                        <div style="padding:5px 0px 0px 0px">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me do%>
+                              Lembrar
+                            <%end%>
+                        </div>
+                        <div style="padding:5px 0px 0px 0px">
+                            <%= f.submit "Login",class:'btn btn-large btn-black' %></div>
+                        <div style="padding:0px 0px 10px 0px; color:#2D75B2">
+                          <%= link_to "Esqueci minha senha", new_password_path(resource_name) %>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+                <!-- </form> -->
+
+                <div class="quadrado-l2">
+                    <h2 class="titulo">Ainda não é cadastrado?</h2>
+                    <div class="descricao">
+                        <div>
+                            <!-- <%= form_for new_registration_path(resource_name)  do |f|%>
+                              <%= f.submit "Cadastrar", class: 'btn btn-large btn-black'%><br />
+                            <%end%> -->
+                            <%= link_to new_registration_path(resource_name) do%>
+                              <input type="submit" name="" value="Cadastrar" class='btn btn-large btn-black'>
+                            <%end%>
+                            <!-- <%= link_to new_registration_path(resource_name)  do |f|%>
+                              <input,type: "submit" class: 'btn btn-large btn-black'>Cadastrar<br /></div>
+                            <%end%> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div style="clear:both"></div>
+
+            </div>
+
+        </div>
+        <!-- end .span12 -->
+    </div>
+    <!-- end. row -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+</div>

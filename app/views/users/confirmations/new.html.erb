@@ -1,0 +1,50 @@
+<div id="content">
+		
+		<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			
+            <div id="page-header">
+            	
+                <div class="row">
+                	<div class="span12">
+                    	
+                        <h2> REENVIAR INSTRUÇÕES DE CONFIRMAÇÃO </h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+			
+			<div class="row">
+            	<div class="span12">
+                	
+                    	<div>
+				
+				<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+ 					 <%= devise_error_messages! %>
+				<div class="quadrado-l1" style="border:none; width:100%">
+					<h2 class="titulo">Não recebi o email de confirmação.</h2>
+					
+					<h5> Digite seu email de cadastro para que possamos reenviar sua confirmação! <br><br></h5>
+					<div class="descricao">
+						<div style="padding:5px 0px 0px 0px"> Email </div>
+						<div style="padding:2px 0px 10px 0px"><%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), style: "width300px" %></div>
+						
+						<div style="padding:5px 0px 0px 0px"> <input class="btn btn-large btn-black" type=submit value=Enviar> </div>
+						<%= render "users/shared/links" %>
+					</div>
+				</div>
+				<% end %>
+				
+				
+
+				
+				<div style="clear:both"></div>
+				
+			</div>
+                    
+                </div><!-- end .span12 -->
+            </div><!-- end. row -->
+			
+		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		</div>
