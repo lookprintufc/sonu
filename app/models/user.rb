@@ -10,9 +10,9 @@ class User < ApplicationRecord
   validates :cpf, presence: true, uniqueness: true, cpf: true
 
   #VALIDAÇÕES DO EVENTO
-  validates_presence_of :justify, :on => :create 
-  validates_presence_of :experience, :on => :create 
-  validates_presence_of :face_link, :on => :create 
+  #validates_presence_of :justify, :on => :create 
+  #validates_presence_of :experience, :on => :create 
+  #validates_presence_of :face_link, :on => :create 
   validates_with QuestionsValidator
   #EVENTOS ANSWER
 
