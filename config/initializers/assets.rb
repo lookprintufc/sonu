@@ -17,3 +17,4 @@ Rails.application.config.assets.precompile += %w( *.png )
 Rails.application.config.assets.precompile += %w( *.jpg )
 Rails.application.config.assets.precompile += %w( toast.js )
 Rails.application.config.assets.precompile += %w( toast_site.js )
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
