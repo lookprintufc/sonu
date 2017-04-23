@@ -6,6 +6,7 @@ class SiteController < ApplicationController
   end
 
   def index
+
   end
 
   def academic
@@ -18,6 +19,11 @@ class SiteController < ApplicationController
   end
 
   def comitees
+    @commissions = Commission.all
+  end
+
+  def set_comitees
+    @commissions = Comission.find(params[:id])
   end
 
   def contact
@@ -68,5 +74,5 @@ class SiteController < ApplicationController
   def story
   end
 
-
+  
 end

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  
-
   # root 'crew/admins#dashboard',  as: :authenticated_admin_root
   namespace :crew do
     devise_for :admins,
@@ -28,7 +26,11 @@ Rails.application.routes.draw do
         get 'comitee/3days' => 'comitees#days3', as: :users_nopay_3days
         resources :admins
 
+
         get 'waiting_list' => 'users#waiting_list', as: :users_waiting_list
+
+        resources :commissions
+      
 
       end
 
@@ -104,4 +106,6 @@ Rails.application.routes.draw do
   get '/parceiros' => 'site#partners', as: :partners
   get '/inscricoes' => 'site#inscription', as: :inscription
   get '/contato' => 'site#contact', as: :contact
+  
+
 end
