@@ -133,14 +133,27 @@
         });
 
         //Danger
-        $('#danger-alert').click(function () {
-            swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
-                type: "error",
-                showCancelButton: true,
-                confirmButtonClass: 'btn-danger waves-effect waves-light',
-                confirmButtonText: 'Danger!'
+        $('#danger-alert').click(function (e) {
+           e.preventDefault();
+           alert(1);
+           //var currentElement = $(this);
+           swal({
+              title: "Você tem certeza?",
+              text: "Não será possível desfazer essa ação!",
+              type: "error",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-danger waves-effect waves-light',
+              confirmButtonText: "Sim, apagar!",
+              cancelButtonText: "Não, cancelar",
+              closeOnConfirm: false,
+              closeOnCancel: false
+            },
+            function(isConfirm){
+              if (isConfirm) {
+                //window.location.href = currentElement.attr('href');
+              } else {
+                swal("Cancelled", "Cancelado bem a tempo =)", "error");
+              }
             });
         });
 

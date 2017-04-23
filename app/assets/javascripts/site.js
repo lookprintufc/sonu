@@ -1,7 +1,5 @@
-//= require sonu_template/_layout/slider/js/jquery.min.js
-//= require jquery_ujs
 //= require maskedinput
-//= require toastr
+
 //= require sonu_template/_layout/slider/rs-plugin/js/jquery.themepunch.plugins.min.js
 //= require sonu_template/_layout/slider/rs-plugin/js/jquery.themepunch.revolution.min.js
 
@@ -148,6 +146,7 @@ $(document).ready(function() {
 
 
 jQuery(function($){
+   $("#cpf_dupla").mask("999.999.999-99");
    $("#cpf").mask("999.999.999-99");
    $("#cep").mask("99.999-999");
    $("#birthday").mask("99/99/9999");
@@ -186,10 +185,6 @@ $('#cpf_dupla').blur(function(){
             
         });  
         
-    });
-
-    $("input[name='cotist']").change(function(){
-    
     });
 
 

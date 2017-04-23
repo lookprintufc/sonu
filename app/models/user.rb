@@ -4,31 +4,17 @@ class User < ApplicationRecord
 
   belongs_to :comitee
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable
-  validates_presence_of :email, :name ,:general_register,:cpf,:birthday,:gender,:cel,:university, :facebook_profile_link
-  validates :email,:general_register, uniqueness: true
-  usar_como_cpf :cpf
+    :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  validates_presence_of :email, :name ,:general_register,:cpf,:birthday,:gender,:university, :facebook_profile_link
+  
+  validates :cpf, presence: true, uniqueness: true, cpf: true
 
-
-  def paid_comitee_value
-    if self.comitee.nil? || self.comitee.dual == true
-      total = 0
-      if self.is_cotist == true
-        total += self.comitee.value_cotist 
-      else
-        total += self.comitee.value_not_cotist
-      end
-      dupla = User.where(cpf: Cpf.new(self.cpf_dual)).first
-      if dupla.is_cotist == true
-        total += dupla.comitee.value_cotist 
-      else
-        total += dupla.comitee.value_not_cotist
-      end
-      total
-    else
-      self.is_cotist? ? self.comitee.value_cotist : self.comitee.value_not_cotist
-    end
-  end
+  #VALIDAÇÕES DO EVENTO
+  validates_presence_of :justify, :on => :create 
+  validates_presence_of :experience, :on => :create 
+  validates_presence_of :face_link, :on => :create 
+  validates_with QuestionsValidator
+  #EVENTOS ANSWER
 
   def set_name_description
     if self.comitee.dual == true
@@ -38,19 +24,23 @@ class User < ApplicationRecord
     end
   end
 
+  def type_user
+    self.is_cotist == true ? 'Cotista' : 'Não cotista'
+  end
+
 
   def pay_pagseguro
     payment = PagSeguro::PaymentRequest.new
 
     payment.reference = "REFl#{self.comitee_id}user#{self.id}"
 
-    payment.notification_url = 'https://ecej17.herokuapp.com/confirm_payment'
-    payment.redirect_url = 'https://ecej17.herokuapp.com/'
+    payment.notification_url = 'http://localhost:3000/confirm_payment'
+    payment.redirect_url = 'http://localhost:3000/'
 
     payment.items << {
       id: self.id,
       description: "#{self.comitee.name}  #{set_name_description}" ,
-      amount: self.paid_comitee_value
+      amount: self.comitee.paid_comitee_value_pagseguro(self)
     }
 
     payment.sender = {

@@ -17,7 +17,6 @@
          <h3 style="margin-bottom:30px; margin-top:20px" class="headline">
             <span>Inscrições Abertas</span>
          </h3>
-         <% j=1 %>
          <% @comitees.each do |comitee| %>
          <% if comitee.is_active %>
          <div style="float:left; margin-right:30px; margin-bottom:30px; width:290px; min-height:400px">
@@ -40,7 +39,9 @@
                <div style="text-align:left">
                    <i class="fa fa-clock-o"></i>
                    Fila de Espera</div>-->
+            <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>    
             <span class="label label-success">INSCRITO</span>
+            <% end %>
          </div>
          <%end%>
          <%end%>
@@ -53,7 +54,6 @@
          <h3 style="margin-bottom:30px; margin-top:20px" class="headline">
             <span>Inscrições Encerradas</span>
          </h3>
-         <% j=1 %>
          <% @comitees.each do |comitee| %>
          <% if comitee.is_passed %>
          <div style="float:left; margin-right:30px; margin-bottom:30px; width:290px; min-height:400px">
@@ -72,10 +72,15 @@
             <div style="text-align:left">
                <%=comitee.grade%>
             </div>
+            <!--
             <div style="text-align:left">
                <i class="fa fa-clock-o"></i>
                Fila de Espera
             </div>
+            -->
+            <% if user_signed_in? && !current_user.comitee_id.nil? && current_user.comitee_id == comitee.id %>    
+            <span class="label label-success">INSCRITO</span>
+            <% end %>
          </div>
          <%end%>
          <%end%>

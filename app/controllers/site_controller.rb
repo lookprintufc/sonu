@@ -1,6 +1,9 @@
 class SiteController < ApplicationController
-  before_action :authenticate_user!,:get_comitees
+  before_action :get_comitees, :get_user
   layout 'site'
+
+  def perfil
+  end
 
   def index
   end

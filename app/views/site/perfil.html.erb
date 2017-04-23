@@ -1,0 +1,93 @@
+
+<div id="content">
+		
+		<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+			
+            <div id="page-header">
+            	
+                <div class="row">
+                	<div class="span12">
+                    	
+                        <h2> Perfil </h2>
+                        
+                    </div><!-- end .span12 -->
+                </div><!-- end .row -->
+                
+            </div><!-- end #page-header -->
+			
+			<div class="row">
+            	<div class="span12">
+                	
+                    <h3 class="headline" style="margin-bottom:30px; margin-top:20px"><span>Meus Dados</span></h3>
+                    
+					<table>
+						<tr>
+							<td> Nome</td>
+							<td> <%= @user.name %> </td>
+						</tr>
+						<tr>
+							<td> Email</td>
+							<td> <%= @user.email %> </td>
+						</tr>
+						<tr>
+							<td> CPF</td>
+							<td> <%= @user.cpf %> </td>
+						</tr>
+						<tr>
+							<td> Data Nascimento</td>
+							<td> <%= @user.birthday %> </td>
+						</tr>
+						<tr>
+							<td> Celular</td>
+							<td> <%= @user.cel %> </td>
+						</tr>
+					</table>
+					<a class="btn btn-green-dark" href="/perfil/edit">Alterar Dados</a>
+					
+                </div><!-- end .span12 -->
+            </div><!-- end. row -->
+			
+			<div class="row">
+            	<div class="span12">
+                	
+                    <h3 class="headline" style="margin-bottom:30px; margin-top:20px"><span>Minha Inscrição</span></h3>
+                    
+					<table>
+						<tr>
+							<td width=150> </td>
+							<td width=300> Evento </td>
+							<td> Data de Início</td>
+							<td> Situação </td>
+							<td> Dada do Pagamento </td>
+							<td></td>
+
+						</tr>
+						<% if !@user.comitee.nil? %>
+						<tr>
+							<td> <img style="width:150px" src="<%= @user.comitee.avatar_url %>" class="fotoborda"> </td>
+							<td> <%= @user.comitee.name %> </td>
+							<td> <%= @user.comitee.start_date %> </td>
+							<td> <%= @user.payment_status %></td>
+							<td> <%= @user.paid_on %></td>
+							<!--
+							<td> <a class="btn btn-green-dark" href="#">Imprimir</a> </td>-->
+							<% if @user.paid_on.nil? %>
+							<% if (@user.comitee.dual? && @user.lider_dual==true) || !@user.comitee.dual? %>
+							<td> <a class="btn btn-green-dark" href="payment" target="_blank">Efetuar Pagamento</a></td> 
+							<% else %>
+							<td> <a class="btn btn-green-dark" href="javascript:void(0)">Sua dupla foi encarregada de pagar =)</a></td>
+							<% end %>
+							<% end %>
+				
+							
+						</tr>
+						<% end %>
+					
+					</table>
+					
+                </div><!-- end .span12 -->
+            </div><!-- end. row -->
+			
+		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+		</div>

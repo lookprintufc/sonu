@@ -40,7 +40,7 @@ a {
 	max-height:500px !important;
 	overflow:hidden;
 	background-color:#222222;
-	background-image:url(/slide/images/hashdark.png)/*tpa=http://www.okathemes.com/themes/proma/images/hashdark.png*/;
+	/*background-image:url(/slide/images/hashdark.png) */ /*tpa=http://www.okathemes.com/themes/proma/images/hashdark.png*/;
 	background-repeat: repeat;
 	background-position:center;
 }

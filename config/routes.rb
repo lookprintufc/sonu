@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   # root 'crew/admins#dashboard',  as: :authenticated_admin_root
   namespace :crew do
     devise_for :admins,
@@ -20,8 +22,13 @@ Rails.application.routes.draw do
       authenticated  do
 
         resources :users
-        resources :comitees
+        resources :comitees do
+          patch 'unsubscribe_user/:user_id' => 'comitees#unsubscribe_user', as: :user_unsubscribe
+        end
+        get 'comitee/3days' => 'comitees#days3', as: :users_nopay_3days
         resources :admins
+
+        get 'waiting_list' => 'users#waiting_list', as: :users_waiting_list
 
       end
 
@@ -51,9 +58,18 @@ Rails.application.routes.draw do
     sign_up: 'new'
   }
 
-   devise_scope :user do
+  devise_scope :user do
     authenticated :user do
       #root to: 'user_dashboard#index',  as: :authenticated_user_root
+      get 'comitee/cpf/cpf_find' => 'comitees#check_cpf', as: :show_comitee_cpf
+      put 'comitee/:id/update' => 'comitees#update', as: :update_user_comitee
+      get 'payment' => 'checkout#pagseguro'
+      patch 'users/change_cotist/:comitee_id' => 'users#change_cotist', as: :update_cotist_user
+      get 'perfil' => 'site#perfil', as: :perfil_user
+
+      get 'perfil/edit' => 'users/registrations#edit'
+      put 'perfil' => 'users/registrations#update'
+
 
     end
     unauthenticated :user do
@@ -61,10 +77,8 @@ Rails.application.routes.draw do
     end
 
     get 'comitee/:id' => 'comitees#show', as: :show_comitee
-    get 'comitee/cpf/cpf_find' => 'comitees#check_cpf', as: :show_comitee_cpf
-    put 'comitee/update' => 'comitees#update', as: :update_user_comitee
+    post 'confirm_payment' => 'notifications#confirm_payment', as: :confirm_payment
 
-    get 'payment' => 'checkout#pagseguro'
   end
 
 

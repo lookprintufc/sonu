@@ -1,6 +1,5 @@
 //= require admin/js/modernizr.min.js
-//= require jquery
-//= require jquery_ujs
+//= require admin/js/bootstrap.js
 //= require admin/js/detect.js
 //= require admin/js/fastclick.js
 //= require admin/js/jquery.slimscroll.js
@@ -9,6 +8,8 @@
 //= require admin/js/jquery.nicescroll.js
 //= require admin/js/jquery.scrollTo.min.js
 
+//= require admin/js/jquery.core.js
+//= require admin/js/jquery.app.js
 
 
 
@@ -35,7 +36,7 @@
 
 //= require admin/plugins/fileuploads/js/dropify.min.js
 
-//= require toastr
+//= require data-confirm-modal
 
 var resizefunc = [];
 
@@ -52,3 +53,11 @@ $('.dropify').dropify({
                     'fileSize': 'The file size is too big (1M max).'
                 }
             });
+
+dataConfirmModal.setDefaults({
+  title: 'Você tem certeza?',
+  text: 'Deseja fazer isso?',
+  commit: 'Sim, prosseguir!',
+  cancel: 'Não, cancelar!',
+  zIindex: 10099
+});

@@ -1206,7 +1206,6 @@ LOGIN
 }
 
 
-
 .error {
     color: #FF0000;
 	padding-left:10px
@@ -1216,7 +1215,6 @@ LOGIN
 .label-success {
     background-color: #5cb85c;
 }
-
 
 .label {
     display: inline;
@@ -1236,3 +1234,20 @@ LOGIN
 	float: left;
 	margin-top: -30px;
 }
+
+
+#error_explanation{
+	background-color: rgba(240, 80, 80, 0.2);
+    border-color: rgba(240, 80, 80, 0.3);
+    color: #ff5b5b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+}
+
+#error_explanation h2{
+	color: #ff5b5b;
+}
+
