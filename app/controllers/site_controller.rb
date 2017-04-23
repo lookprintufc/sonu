@@ -1,8 +1,8 @@
 class SiteController < ApplicationController
-  before_action :authenticate_user!,:get_comitees
   layout 'site'
 
   def index
+
   end
 
   def academic
@@ -15,8 +15,14 @@ class SiteController < ApplicationController
   end
 
   def comitees
+    @commissions = Commission.all
   end
-
+  def set_comitees
+    @commissions = Comission.find(params[:id])
+  end
+  def commission_params
+    params.require(:commission).permit(:title, :description, :photo)
+  end
   def contact
   end
 
@@ -65,5 +71,5 @@ class SiteController < ApplicationController
   def story
   end
 
-
+  
 end
