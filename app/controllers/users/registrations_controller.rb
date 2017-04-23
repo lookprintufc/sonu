@@ -8,12 +8,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(inscription_params)
     set_minimum_password_length
-    if @user.save
-      flash[:success] = 'Inscrição realizada. Agora você pode desfrutar dos eventos da SONU.'
-      redirect_to new_user_session_path
-    else
-      flash[:error] = 'Um erro ocorreu, não foi possível processar sua inscrição'
-      redirect_to new_user_registration_path
+    respond_to do |format|
+      if @user.save
+        flash[:success] = 'Inscrição realizada. Agora você pode desfrutar dos eventos da SONU.'
+        format.html { redirect_to new_user_session_path }
+      else
+        format.html { render 'new' }
+        format.json {  render json: @user.errors }
+      end
     end
   end
 
