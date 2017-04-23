@@ -21,7 +21,7 @@
          <% if comitee.is_active %>
          <div style="float:left; margin-right:30px; margin-bottom:30px; width:290px; min-height:400px">
             <%= link_to show_comitee_path(comitee) do %>
-            <%= image_tag("/uploads/d59c7698b58cd006b608ef32f8a744b8.png" ,class:"fotoborda", id:"inscricoes_imagem",style: "width:280px") %>
+            <%= image_tag(comitee.avatar_url ,class:"fotoborda", id:"inscricoes_imagem",style: "width:280px") %>
             <% end %>
             <div>
                <h4>
@@ -58,7 +58,7 @@
          <% if comitee.is_passed %>
          <div style="float:left; margin-right:30px; margin-bottom:30px; width:290px; min-height:400px">
             <%= link_to show_comitee_path(comitee) do %>
-            <%= image_tag("/uploads/d59c7698b58cd006b608ef32f8a744b8.png" ,class:"fotoborda", id:"inscricoes_imagem",style: "width:280px")%>
+            <%= image_tag(comitee.avatar_url ,class:"fotoborda", id:"inscricoes_imagem",style: "width:280px")%>
             <% end %>
             <div>
                <h4>
