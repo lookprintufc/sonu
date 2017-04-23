@@ -529,9 +529,9 @@
                         
                             Foi realizado um cadastro no site <a href="http://www.sonu.com.br/" rel="noopener noreferrer" target="_blank">www.sonu.com.br</a> utilizando este endereço de e-mail. Para confirmar seu cadastro e habilitar o seu login, clique aqui: <%= link_to 'Confirmar minha conta', confirmation_url(@resource, confirmation_token: @token) %>.<br>
 <br>
-ATENÇÃO: se você já possuía cadastro no site anterior, mas mesmo assim recebeu este e-mail, por favor confirme seu cadastro através deste link. Devido a um processo de atualização de cadastros em virtude de mudança de servidor, solicitamos que confirme novamente seu login para habilitar sua conta.<br>
+ATENÇÃO: se você já possuía cadastro no site anterior, mas mesmo assim recebeu este e-mail, por favor confirme seu cadastro através <%= link_to 'deste link', confirmation_url(@resource, confirmation_token: @token) %>. Devido a um processo de atualização de cadastros em virtude de mudança de servidor, solicitamos que confirme novamente seu login para habilitar sua conta.<br>
 <br>
-Obs: Caso você não tenha se cadastrado nesse email eletrônico, contate-nos via email<br>
+Obs: Caso você não tenha se cadastrado nesse email eletrônico, contate-nos via email
 <a my-reply-message="::historyMessage.reply_to_mid" ng-if="::historyMessage.reply_to_mid">sonu.extensao@gmail.com</a>
                         </td>
                     </tr>
