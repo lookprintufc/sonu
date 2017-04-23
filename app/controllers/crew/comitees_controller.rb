@@ -67,6 +67,30 @@ class Crew::ComiteesController < Crew::BaseController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      @comitee.users.each do |user|
+        user.comitee_id = nil
+        user.cpf_dual = nil
+        user.answer_1 = nil
+        user.answer_2 = nil
+        user.answer_3 = nil
+        user.answer_4 = nil
+        user.answer_5 = nil
+        user.justify = nil
+        user.experience = nil
+        user.face_link = nil
+        user.paid_on = nil
+        user.payment_status = 'Pendente'
+        user.inscription_date = nil
+        user.save(:validate => false)
+      end
+      if @comitee.destroy
+        format.html { redirect_to crew_comitees_path, notice: 'Comitê foi apagado com sucesso.' }
+        format.xml  { head :ok }
+      end
+    end
+  end
 
   private
   def load_comitee
