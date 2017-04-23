@@ -10,7 +10,6 @@ module Sonu2017
   class Application < Rails::Application
     config.time_zone = 'America/Fortaleza'
     config.i18n.default_locale = :'pt-BR'
-    config.assets.precompile =  [ '*.js', '*.scss']
     config.assets.initialize_on_precompile = false
     
     config.middleware.use Rack::Cors do
