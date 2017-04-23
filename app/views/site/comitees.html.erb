@@ -1,26 +1,45 @@
 <div id="content">
-    
+
     <!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-      
-            <div id="page-header">
-              
-                <div class="row">
-                  <div class="span12">
-                      
-                        <h2>COMITÊS</h2>
-                        
-                    </div><!-- end .span12 -->
-                </div><!-- end .row -->
-                
-            </div><!-- end #page-header -->
-      
-      <div class="row">
-              <div class="span12">
-                  
-                    Em breve!                    
-                </div><!-- end .span12 -->
-            </div><!-- end. row -->
+
+    <div id="page-header">
+
+        <div class="row">
+            <div class="span12">
+
+                <h2>Comitês</h2>
+
+            </div>
+            <!-- end .span12 -->
+        </div>
+        <!-- end .row -->
+
+    </div>
+    <!-- end #page-header -->
+
+    <div class="row">
+        <div class="span12">
+                <ul class="commissions">
+                <% @commissions.each do |com| %>
+
+                    <li><%= com.title %></li>
+                    <li><%= com.description %></li>
+                    <li><%= com.avatar %></li>
+                <% end %>
+                </ul>
+                </div>
+             
+                    <p class="text-right" style="margin-top:20px; ">
+                        <a href="/comites/comitedeimprensa" class="btn btn-green-dark">Ver mais</a>
+                    </p>
+                </div>
+                <div style="clear:both"></div>
+
+            <div class="divider double-dotted"></div>
             
+        <!-- end .span12 -->
+    </div>
+    <!-- end. row -->
+
     <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    </div>    
