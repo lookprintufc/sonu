@@ -10,9 +10,9 @@ class User < ApplicationRecord
   validates :cpf, presence: true, uniqueness: true, cpf: true
 
   #VALIDAÇÕES DO EVENTO
-  #validates_presence_of :justify, :on => :create 
-  #validates_presence_of :experience, :on => :create 
-  #validates_presence_of :face_link, :on => :create 
+  validates :justify, presence: true, :allow_nil => true
+  validates :experience, presence: true, :allow_nil => true
+  validates :face_link, presence: true, :allow_nil => true
   validates_with QuestionsValidator
   #EVENTOS ANSWER
 
@@ -34,8 +34,8 @@ class User < ApplicationRecord
 
     payment.reference = "REFl#{self.comitee_id}user#{self.id}"
 
-    payment.notification_url = 'http://localhost:3000/confirm_payment'
-    payment.redirect_url = 'http://localhost:3000/'
+    payment.notification_url = 'http://www.sonu.com.br/confirm_payment'
+    payment.redirect_url = 'http://www.sonu.com.br/'
 
     payment.items << {
       id: self.id,

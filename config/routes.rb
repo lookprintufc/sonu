@@ -64,7 +64,7 @@ Rails.application.routes.draw do
     authenticated :user do
       #root to: 'user_dashboard#index',  as: :authenticated_user_root
       get 'comitee/cpf/cpf_find' => 'comitees#check_cpf', as: :show_comitee_cpf
-      put 'comitee/:id/update' => 'comitees#update', as: :update_user_comitee
+      put 'comitee/:id/update' => 'comitees#update_user_comitee', as: :update_user_comitee
       get 'payment' => 'checkout#pagseguro'
       patch 'users/change_cotist/:comitee_id' => 'users#change_cotist', as: :update_cotist_user
       get 'perfil' => 'site#perfil', as: :perfil_user

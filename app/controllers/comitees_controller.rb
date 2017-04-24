@@ -22,7 +22,7 @@ class ComiteesController < ApplicationController
     end
   end
 
-  def update
+  def update_user_comitee
     respond_to do |format|
       @user.comitee_id = params[:id_evento]
       @user.inscription_date = Time.now

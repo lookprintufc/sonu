@@ -29,7 +29,7 @@
                <% if @comitee.is_full?(current_user) %>
                <div style="margin-top:30px"> <%= current_user.is_cotist ? 'Não há vagas para cotista.' : 'Nao há vagas para não cotista.' %> </div>
                <% else %>
-               <%= form_for @user, url: { :action => "update" }, html: { method: :put } do |f| %>
+               <%= form_for @user, url: { :action => "update_user_comitee" }, html: { method: :put } do |f| %>
                <% if @user.errors.any? %>
                <script type="text/javascript">
                   toastr.error('<%= pluralize(@user.errors.count, "error") %> encontrados: </br><% @user.errors.full_messages.each do |message| %><%= message %></br><% end %>', "Aviso");

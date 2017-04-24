@@ -1,25 +1,42 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+<div id="content">
+<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div id="page-header">
+   <div class="row">
+      <div class="span12">
+         <h2> Trocar minha senha</h2>
+      </div>
+      <!-- end .span12 -->
+   </div>
+   <!-- end .row -->
+</div>
+<!-- end #page-header -->
+<div class="row">
+   <div class="span12">
+      <div>
+         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+         <%= devise_error_messages! %>
+         <%= f.hidden_field :reset_password_token %>
+         <div class="quadrado-l1" style="border:none; width:100%">
+            <h2 class="titulo">Esqueci minha senha</h2>
+            <h5> Digite sua nova senha! <br><br></h5>
+            <div class="descricao">
+               <div style="padding:5px 0px 0px 0px"> Nova senha </div>
+               <% if @minimum_password_length %>
+               <em>(<%= @minimum_password_length %> Mínimo de caracteres)</em><br />
+               <% end %>
+               <div style="padding:2px 0px 10px 0px">
+                  <%= f.password_field :password, autofocus: true, autocomplete: "off", style: "width:300px"  %>
+                  <div style="padding:5px 0px 0px 0px"> Repita sua nova senha </div>
+                  <div style="padding:2px 0px 10px 0px"><%= f.password_field :password_confirmation, autocomplete: "off",style: "width:300px"  %> </div>
+                  <div style="padding:5px 0px 0px 0px"> <input class="btn btn-large btn-black" type=submit value=Alterar> </div>
+                  <%= render "users/shared/links" %>
+               </div>
+            </div>
+            <% end %>
+         </div>
+      </div>
+      <!-- end .span12 -->
+   </div>
+   <!-- end. row -->
+   <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+</div>
