@@ -17,6 +17,7 @@
         <!-- App css -->
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'dashboard' %>
+        <%= javascript_include_tag 'toast'%>
     </head>
 
     <body class="fixed-left">
@@ -44,12 +45,13 @@
             </div>
         </div>
         <!-- END wrapper -->
+        <%= javascript_include_tag 'dashboard'%>
     </body>
 
-      <%= javascript_include_tag 'dashboard'%>
+      
       <% flash.each do |key, value| %>
         <script type="text/javascript">
-           toastr.warning('<span><%= value %></span>', "Aviso");
+           toastr.<%= key %>('<span><%= value %></span>', "Aviso");
         </script>
       <% end %>
 </html>

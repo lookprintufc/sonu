@@ -22,16 +22,12 @@
                 <ul class="commissions">
                 <% @commissions.each do |com| %>
 
-                    <li><%= com.title %></li>
-                    <li><%= com.description %></li>
-                    <li><%= com.avatar %></li>
+                    <h3><%= link_to com.title %></h3>
+                    <li><%= link_to 'ver mais', commission_path(com), class:"btn btn-green-dark" %></li>
                 <% end %>
                 </ul>
                 </div>
              
-                    <p class="text-right" style="margin-top:20px; ">
-                        <a href="/comites/comitedeimprensa" class="btn btn-green-dark">Ver mais</a>
-                    </p>
                 </div>
                 <div style="clear:both"></div>
 

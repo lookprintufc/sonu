@@ -1,5 +1,9 @@
 class SiteController < ApplicationController
+  before_action :get_comitees, :get_user
   layout 'site'
+
+  def perfil
+  end
 
   def index
 
@@ -17,12 +21,11 @@ class SiteController < ApplicationController
   def comitees
     @commissions = Commission.all
   end
-  def set_comitees
-    @commissions = Comission.find(params[:id])
-  end
-  def commission_params
-    params.require(:commission).permit(:title, :description, :photo)
-  end
+
+  
+  
+
+
   def contact
   end
 

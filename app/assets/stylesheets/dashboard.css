@@ -16,9 +16,7 @@
 *= require admin/plugins/datatables/responsive.bootstrap.min.css
 *= require admin/plugins/datatables/scroller.bootstrap.min.css
 
-*= require admin/plugins/fileuploads/css/dropify.min.css
-
 *= require toastr
-
+*= require admin/plugins/fileuploads/css/dropify.min.css
 
  */

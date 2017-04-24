@@ -4,16 +4,16 @@
       
          <h4 class="header-title m-t-0 m-b-30">Página comite</h4>
          <div class="row">
-         <%= form_for @commissions do |f| %>
+         <%= form_for @commissions , :html => {class: 'form-horizontal'},  url: {action: "create"} do |f| %>
 
 
             <div class="col-lg-6">
             <div class="form-group">
                <%= f.label :title, class:"col-md-2 control-label" do %>
-               <span class="required">Título </span>
+               <span >Título </span>
                <% end %> 
                <div class="col-md-10">
-               <%= f.text_field :title, class:"date-picker form-control col-md-7 col-xs-12", type:"text", required:"required"%>
+               <%= f.text_field :title, class:"date-picker form-control col-md-7 col-xs-12", type:"text"%>
                </div>
                </div>
 
@@ -31,7 +31,7 @@
                <span class="required">Imagem </span>
                <% end %> 
                <div class="col-md-10">
-               <%= f.file_field :avatar, cclass:"dropify"%>
+               <%= f.file_field :avatar, class:"dropify" , 'data-default-file' => @commissions.avatar_url%>
                </div>
                </div>
                </div>
@@ -40,7 +40,7 @@
 
                   </div>
          
-                        <%= f.submit "Cadastrar", class:"btn btn-success btn-block btn-trans waves-effect w-md waves-success m-b-5" %>
+                        <button type="submit" class="btn btn-success btn-block btn-trans waves-effect w-md waves-success m-b-5">SALVAR</button>
                         
                      </div>
                   </div>

@@ -57,8 +57,8 @@
                   </div>
                   <!-- end .span9 -->
                   <div class="span3 text-right">
-                     <a href="/cadastro" class="btn btn-large-big btn-blue-light"><strong>CADASTRE-SE</strong> AGORA</a>
-                  </div>
+                     <%= link_to 'CADASTRE-SE', new_user_registration_path, class:"btn btn-large-big btn-blue-light" 
+%>                  </div>
                   <!-- end .span3 -->
                </div>
                <!-- end .row -->
@@ -71,7 +71,7 @@
    </div>
    <!-- end .box -->
 
-   <div class="row">
+    <div class="row">
       <div class="span12">
          <h3 class="headline">
             <span>NOTÍCIAS</span>
@@ -86,7 +86,7 @@
             <i class="ifc-copy"></i>
             <div class="icon-box-content">
                <h2>
-                  <a href="/noticia/<?=$r->slug?>"><?=$r->titulo?></a>
+                  <a href="/noticia">E.E.F.M. Patronato Sagrada Família recebe primeira SONU Escolas de 2016</a>
                </h2>
             </div>
             <!-- end .icon-box-content -->
@@ -117,7 +117,7 @@
                   </div>
                   <!-- end .portfolio-item-overlay-actions -->
                   <div class="portfolio-item-description hidden-tablet">
-                     <h4 class="text-uppercase">TITULO</h4>
+                     <h4 class="text-uppercase">Notícia</h4>
                   </div>
                   <!-- end .portfolio-item-description -->
                </div>
@@ -149,7 +149,7 @@
                   </div>
                   <!-- end .portfolio-item-overlay-actions -->
                   <div class="portfolio-item-description hidden-tablet" style="top:15px">
-                     <h4 class="text-uppercase">titulo</h4>
+                     <h4 class="text-uppercase">Notícia</h4>
                   </div>
                   <!-- end .portfolio-item-description -->
                </div>
@@ -165,27 +165,7 @@
    <!-- end .row -->
    <br><br>
    
-   <div style="background-image:url(_content/backgrounds/bg-box-2.jpg);" class="box">
-      <div class="row">
-         <div class="span12">
-            <br><br>
-            <h1 class="text-center last">Nossos <strong>PARCEIROS</strong></h1>
-            <br><br>
-         </div>
-         <!-- end .span12 -->
-      </div>
-      <!-- end .row -->
-      <div class="box-overlay">
-         <div class="row">
-            <div class="span12">
-               <? include("carrocel.php") ?>
-            </div>
-            <!-- end .span12 -->
-         </div>
-         <!-- end. row -->
-      </div>
-      <!-- end .box-overlay -->
-   </div>
+   
    <!-- end .box -->
    <div class="row">
       <div class="span12">

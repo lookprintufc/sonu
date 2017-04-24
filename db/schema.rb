@@ -72,22 +72,22 @@ ActiveRecord::Schema.define(version: 20170423155212) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",         null: false
+    t.string   "encrypted_password",     default: "",         null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,          null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "name",                   default: "",    null: false
-    t.string   "general_register",       default: "",    null: false
-    t.string   "cpf",                    default: "",    null: false
-    t.string   "gender",                 default: "",    null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.string   "name",                   default: "",         null: false
+    t.string   "general_register",       default: "",         null: false
+    t.string   "cpf",                    default: "",         null: false
+    t.string   "gender",                 default: "",         null: false
     t.date     "birthday"
     t.string   "cep"
     t.string   "state"
@@ -97,11 +97,11 @@ ActiveRecord::Schema.define(version: 20170423155212) do
     t.string   "city"
     t.string   "district"
     t.string   "phone"
-    t.string   "cel",                    default: "",    null: false
-    t.string   "university",             default: "",    null: false
+    t.string   "cel",                    default: "",         null: false
+    t.string   "university",             default: "",         null: false
     t.integer  "registration_id"
     t.integer  "semester"
-    t.text     "facebook_profile_link",  default: "",    null: false
+    t.text     "facebook_profile_link",  default: "",         null: false
     t.boolean  "completed"
     t.boolean  "active",                 default: true
     t.integer  "lot_id"
@@ -120,6 +120,9 @@ ActiveRecord::Schema.define(version: 20170423155212) do
     t.text     "experience"
     t.string   "face_link"
     t.string   "categories_ids"
+    t.string   "payment_status",         default: "Pendente"
+    t.boolean  "lider_dual",             default: false
+    t.datetime "inscription_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["facebook_profile_link"], name: "index_users_on_facebook_profile_link", unique: true
     t.index ["general_register", "cpf"], name: "index_users_on_general_register_and_cpf", unique: true

@@ -15,13 +15,14 @@ class Crew::ComiteesController < Crew::BaseController
   end
 
   def new
-    @comitees = Comitee.new
+    @comitee = Comitee.new
   end
 
   def create
     @comitee = Comitee.new(comitee_params)
     if @comitee.save
-      redirect_to crew_comitees_path, notice: "Comitê criado com sucesso"
+      flash[:success] = "Comitê criado com sucesso."
+      redirect_to crew_comitees_path
     else
       render :new
     end
@@ -29,14 +30,44 @@ class Crew::ComiteesController < Crew::BaseController
 
   def update
     if @comitee.update(comitee_params)
-      redirect_to crew_comitees_path, notice: "Comitê editado com sucesso."
+      flash[:success] = "Comitê editado com sucesso."
+      redirect_to crew_comitees_path
     else
       redirect_to edit_crew_comitee_path(@comitee), alert: "Não foi possível alterar comitê."
     end
   end
 
-  private
+  def days3
+    data = Time.now.getutc
+    @users = User.where('inscription_date <= :three_days_ago', :three_days_ago => Time.now - 3.days
+).where(paid_on: nil)
+  end
 
+  def unsubscribe_user
+    @user = User.find(params[:user_id])
+    @comitee_id = @user.comitee_id
+    @user.comitee_id = nil
+    @user.cpf_dual = nil
+    @user.answer_1 = nil
+    @user.answer_2 = nil
+    @user.answer_3 = nil
+    @user.answer_4 = nil
+    @user.answer_5 = nil
+    @user.justify = nil
+    @user.experience = nil
+    @user.face_link = nil
+    @user.paid_on = nil
+    @user.payment_status = 'Pendente'
+    if @user.save(:validate => false)
+       redirect_to crew_comitee_path(@comitee_id), notice: "Removido com sucesso."
+    else
+      flash[:error] = "Erro ao remover usuário."
+      redirect_to crew_comitee_path(@comitee_id)
+    end
+  end
+
+
+  private
   def load_comitee
     @comitee = Comitee.find(params[:id])
   end

@@ -16,14 +16,13 @@
                                                 <% end %>
                                                 <th>Pagamento</th>
                                                 <th>Opções</th>
-        
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                         <% @comitee.users.each do |user| %>
                                             <tr>
-                                                <td><%=user.name%></td>
+                                                <td><%=user.name%> <% if user.lider_dual==true %> <b>(Líder) </b><% end %></td>
                                                 <td>22/04/2017</td>
                                                 <td><%=user.is_cotist == true ? 'Sim' : 'Não'%></td>
                                                 <% if @comitee.dual == true %>
@@ -32,8 +31,11 @@
                                                 <td><%=user.paid_on.nil? ? 'Pendente' : 'Pago'%></td>
 
                                                 <td>
-                                                <button class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i> </button>
-                                                <button class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button></td>
+                                                <%= link_to edit_crew_user_path(user) do %>
+                                                <button class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i> </button><% end %>
+                                                <%=link_to crew_comitee_user_unsubscribe_path(@comitee, user), method: 'PATCH', data: {confirm: "Deseja apagar #{user.name} do comitê?"}  do %>
+                                                <button class="btn btn-icon waves-effect waves-light btn-danger m-b-5 __web-inspector-hide-shortcut__"> <i class="fa fa-remove"></i></button><% end %>
+                                                </td>
                                             </tr>
                                             <% end %>
                                         </tbody>

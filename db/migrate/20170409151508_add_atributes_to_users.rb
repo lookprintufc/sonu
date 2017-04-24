@@ -15,17 +15,16 @@ class AddAtributesToUsers < ActiveRecord::Migration[5.0]
         add_column :users, :phone, :string
         add_column :users, :cel, :string, null: false, default: ''
         add_column :users, :university, :string, null: false, default: ''
-        add_column :users, :registration_id, :integer
+        add_column :users, :registration_id, :string
         add_column :users, :semester, :integer
         add_column :users, :facebook_profile_link, :text, null: false, default: ''
 
         add_column :users, :completed, :boolean
-        add_column :users, :active, :boolean, default: true
+        add_column :users, :active, :boolean, default: false
         add_column :users, :lot_id, :integer
         add_column :users, :paid_on, :datetime
         add_column :users, :room_id, :integer
 
         add_index :users, [:general_register, :cpf], unique: true
-        add_index :users, [:facebook_profile_link], unique: true
       end
 end
