@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates_presence_of :email, :name ,:general_register,:cpf,:birthday,:gender,:university, :facebook_profile_link
   
   validates :cpf, presence: true, uniqueness: true, cpf: true
+  serialize :categories_ids, Array
+
 
   #VALIDAÇÕES DO EVENTO
   validates :justify, presence: true, :allow_nil => true

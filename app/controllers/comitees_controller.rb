@@ -69,7 +69,7 @@ class ComiteesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:cpf_dual, :categories_ids, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link)
+    params.require(:user).permit(:cpf_dual, :justify, :experience, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :face_link,  :categories_ids =>[])
   end
 
   def check_user_exist_in_comitee
