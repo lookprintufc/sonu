@@ -22,7 +22,8 @@
                 <ul class="commissions">
                 <% @commissions.each do |com| %>
 
-                    <h3><%= link_to com.title %></h3>
+                    <h3><%= link_to com.title, commission_path(com) %></h3>
+                    <h3><%= link_to (image_tag com.avatar.comitees) %></h3>
                     <li><%= link_to 'ver mais', commission_path(com), class:"btn btn-green-dark" %></li>
                 <% end %>
                 </ul>

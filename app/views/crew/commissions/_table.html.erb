@@ -8,16 +8,13 @@
             <thead>
                <tr>
                   <th>Título </th>
-                  <th>Texto</th>
-                  <th>imagem</th>
+                  <th>-</th>
                </tr>
             </thead>
             <tbody>
                <% @commissions.each do |com| %>
                <tr>
                   <td><%=com.title%></td>
-                  <td><%=com.description%></td>
-
                   <td><%= link_to  new_crew_commission_path(@commission) do %><button data-toggle="tooltip" data-placement="left" title="Editar comitê" class="btn btn-icon waves-effect waves-light btn-warning m-b-5"> <i class="fa fa-wrench"></i> </button> <% end %></td>
                   
                </tr>

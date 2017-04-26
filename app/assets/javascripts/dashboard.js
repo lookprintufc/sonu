@@ -31,6 +31,7 @@
 //= require admin/plugins/datatables/responsive.bootstrap.min.js
 //= require admin/plugins/datatables/dataTables.scroller.min.js
 
+//= require ckeditor/init
 
 //= require admin/pages/datatables.init.js
 

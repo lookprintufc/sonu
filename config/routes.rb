@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   # root 'crew/admins#dashboard',  as: :authenticated_admin_root
   namespace :crew do
     devise_for :admins,

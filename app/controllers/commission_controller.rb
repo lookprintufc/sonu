@@ -1,6 +1,8 @@
 class CommissionController < ApplicationController
 	before_action :get_commission,  only: [:show]
 	layout 'site'
+
+
 def show
 end
 

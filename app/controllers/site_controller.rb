@@ -19,11 +19,8 @@ class SiteController < ApplicationController
   end
 
   def comitees
-    @commissions = Commission.all
+    @commissions = Commission.all.order("created_at DESC")
   end
-
-  
-  
 
 
   def contact
