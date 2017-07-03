@@ -97,6 +97,10 @@ ActiveRecord::Schema.define(version: 20170426130316) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "name",                   default: "",         null: false
@@ -114,11 +118,11 @@ ActiveRecord::Schema.define(version: 20170426130316) do
     t.string   "phone"
     t.string   "cel",                    default: "",         null: false
     t.string   "university",             default: "",         null: false
-    t.integer  "registration_id"
+    t.string   "registration_id"
     t.integer  "semester"
     t.text     "facebook_profile_link",  default: "",         null: false
     t.boolean  "completed"
-    t.boolean  "active",                 default: true
+    t.boolean  "active",                 default: false
     t.integer  "lot_id"
     t.datetime "paid_on"
     t.integer  "room_id"
@@ -139,7 +143,6 @@ ActiveRecord::Schema.define(version: 20170426130316) do
     t.boolean  "lider_dual",             default: false
     t.datetime "inscription_date"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["facebook_profile_link"], name: "index_users_on_facebook_profile_link", unique: true
     t.index ["general_register", "cpf"], name: "index_users_on_general_register_and_cpf", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

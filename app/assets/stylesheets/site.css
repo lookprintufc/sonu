@@ -1,26 +1,25 @@
 
 /*
-*= require sonu_template/_layout/css/base.css
-*= require sonu_template/_layout/css/grid.css
-*= require sonu_template/_layout/css/elements.css
-*= require sonu_template/_layout/css/layout.css
-*= require sonu_template/_layout/css/wide.css
+*= require bootstrap.min.css
+*= require core.css
+*= require custom.css
+*= require icofont.css
+*= require responsive.css
+*= require style-customizer.css
+*= require style.css
 
-*= require sonu_template/_layout/js/revolutionslider/css/settings.css
-*= require sonu_template/_layout/js/revolutionslider/css/custom.css
-*= require sonu_template/_layout/js/bxslider/jquery.bxslider.css
-*= require sonu_template/_layout/js/magnificpopup/magnific-popup.css
+*= require plugins/animate.css
+*= require plugins/chosen.min.css
+*= require plugins/jquery-ui.min.css
+*= require plugins/meanmenu.min.css
+*= require plugins/slick.css
 
+*= require shortcode/default.css
+*= require shortcode/footer.css
+*= require shortcode/header.css
+*= require shortcode/shortcodes.css
+*= require shortcode/slider.css
 
-*= require sonu_template/_layout/css/iconfontcustom/iconfontcustom.css
-*= require sonu_template/_layout/css/fontawesome/font-awesome.min.css
-*= require sonu_template/_layout/css/animate/animate.min.css
-*= require sonu_template/_layout/css/animate/animate.min.css
-
-*= require sonu_template/_layout/slider/css/fullwidth.css
-*= require sonu_template/_layout/slider/rs-plugin/css/settings.css
-*= require sonu_template/_layout/css/colorbox.css
-*= require sonu_template/_layout/js/multi-selec/css/multi-select.css
 *= require toastr
 
  */

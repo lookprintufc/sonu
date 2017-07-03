@@ -1,12 +1,13 @@
 //= require maskedinput
 
-//= require sonu_template/_layout/slider/rs-plugin/js/jquery.themepunch.plugins.min.js
-//= require sonu_template/_layout/slider/rs-plugin/js/jquery.themepunch.revolution.min.js
+//= require ajax-mail.js
+//= require bootstrap.min.js
+//= require main.js
+//= require plugins.js
 
-//= require sonu_template/_layout/js/jquery.validate.min.js
-//= require sonu_template/_layout/js/jquery.maskedinput-1.3.min.js
-//= require sonu_template/_layout/js/jquery.colorbox.js
-//= require sonu_template/_layout/js/multi-selec/js/jquery.multi-select.js
+//= require vendor/jquery-1.12.0.min.js
+//= require vendor/modernizr-2.8.3.min.js
+
 
 
 jQuery(function($){
