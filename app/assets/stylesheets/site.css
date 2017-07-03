@@ -7,6 +7,8 @@
 *= require responsive.css
 *= require style-customizer.css
 *= require style.css
+*= require font-awesome.min.css
+
 
 *= require plugins/animate.css
 *= require plugins/chosen.min.css

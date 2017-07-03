@@ -1,12 +1,21 @@
-//= require maskedinput
+//= require jquery.maskedinput-1.3.min.js
 
 //= require ajax-mail.js
 //= require bootstrap.min.js
 //= require main.js
 //= require plugins.js
+//= require jquery.countdown.min.js
+
 
 //= require vendor/jquery-1.12.0.min.js
 //= require vendor/modernizr-2.8.3.min.js
+
+//= require jquery.validate.js
+//= require jquery.maskedinput-1.3.min.js
+//= require jquery.colorbox.js
+//= require multi-selec/js/jquery.multi-select.js
+
+
 
 
 
@@ -16,7 +25,7 @@ jQuery(function($){
    $(".phone").mask("(99) 99999-9999)");
 });
 
-
+/*
 jQuery(document).ready(function() {
 
     if (jQuery.fn.cssOriginal != undefined)
@@ -51,7 +60,7 @@ jQuery(document).ready(function() {
 
     });
 });
-
+*/
 
 $(document).ready(function() {
     
